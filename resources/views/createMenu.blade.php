@@ -4,7 +4,7 @@
 
 <div class                   ="container-fluid">
   <div class                 ="row justify-content-md-center">
-    <h1> Tische hinzufügen </h1>
+    <h1> Speisekarte bearbeiten </h1>
   </div>
 </div>
 
