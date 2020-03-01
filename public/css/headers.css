@@ -104,8 +104,17 @@ input, select {
 /* my code */
 
 html,body {
-    height: auto;
-    width :100%;
-    background-color:#f5e5b0;
-}
+     height: auto;
+     width :100%;
+     background-color: rgb(245, 229, 176);
+ }
+
+
+
+
+
+
+
+
+
 
