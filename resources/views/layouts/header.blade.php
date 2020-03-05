@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name      = "viewport" content= "width=device-width, initial-scale=1, shrink-to-fit=no" >
+    <meta charset   ="utf-8">
+    <meta name      = "viewport" content= "width=device-width, initial-scale=1" >
     <meta name      ="keywords">
     <meta name      ="author" content="Carsten Behmel">
 
@@ -30,7 +30,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-
+                        <img src="{{URL::asset('img/Logo.jpg')}}" alt="Logo" style="width:50px;">
                         <button class    = "navbar-toggler" type= "button" data-toggle= "collapse" data-target= "#navbarNavAltMarkup" aria-controls= "navbarNavAltMarkup" aria-expanded= "false" aria-label= "Toggle navigation" >
                           <span class    = "navbar-toggler-icon" ></span>
                         </button>
