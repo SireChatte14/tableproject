@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\table;
 use Illuminate\Http\Request;
 
 class tableSetUpController extends Controller
@@ -80,5 +81,21 @@ class tableSetUpController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function save(Request $request)
+    {
+        $table= new table();
+        $table -> tableNumber          = $request -> tableNumber;
+        $table -> numberOfSeats         = $request -> numberOfSeats;
+        $table->save();
+
+        return redirect(route('home'));
     }
 }
