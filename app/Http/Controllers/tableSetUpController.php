@@ -11,11 +11,12 @@ class tableSetUpController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @param table $tables
+     * @return void
      */
-    public function index()
+    public function index(table $tables)
     {
-        //
+        return view('admin.TableEdit.index',compact('tables'));
     }
 
     /**
@@ -25,7 +26,7 @@ class tableSetUpController extends Controller
      */
     public function create()
     {
-        //
+        return view ('admin.TableEdit.create');
     }
 
     /**
@@ -38,9 +39,9 @@ class tableSetUpController extends Controller
     {
         $data = $this ->_validate($request);
 
-        menu::create($data);
+        table::create($data);
 
-        return redirect(route('admin.MenuEdit.index'))->withsuccess('Der neue Tisch wurde hinzugefügt');
+        return redirect(route('admin.TableEdit.index'))->withsuccess('Der neue Tisch wurde hinzugefügt');
 
     }
 
@@ -67,12 +68,14 @@ class tableSetUpController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $table
+     * @return void
      */
-    public function edit($id)
+    public function edit($table)
     {
-        //
+          $table= table::findOrFail($table);
+
+          return view('admin.TableEdit.edit', compact('table'));
     }
 
     /**

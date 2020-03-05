@@ -9,25 +9,23 @@
 
         <div class="col-12 mb-3">
             <h1> Tische </h1>
-            <a role="button" href="{{route('admin.MenuEdit.create')}}" class="btn btn-sm btn-outline-primary my-2">Tisch hinzufügen</a>
+            <a role="button" href="{{route('admin.TableEdit.create')}}" class="btn btn-sm btn-outline-primary my-2">Tisch hinzufügen</a>
         </div>
 
             <div class="col-12 ">
                 <table class="table table-striped ">
                     <thead>
                         <tr>
-                            <th> Titel </th>
-                            <th> Beschreibung</th>
-                            <th> Preis </th>
+                            <th> Tischnummer </th>
+                            <th> Anzahl der Sitzplätze</th>
                             <th> Optionen </th>
                          </tr>
                          <tr>
                             @foreach($tables->all() AS $table)
-                            <td>{{$table->title}}</td>
-                            <td>{{$table->description}}</td>
-                            <td>{{$table->price}}</td>
+                            <td>{{$table->tableNumber}}</td>
+                            <td>{{$table->numberOfSeats}}</td>
                             <td>
-                                <form action="{{route('admin.MenuEdit.destroy',$table->id)}}" method="post">
+                                <form action="{{route('admin.TableEdit.destroy',$table->id)}}" method="post">
                                 <div class="btn-group">
                                     <button type="submit" class="btn-outline-secondary"><i class="fas fa*4 fa-trash-alt"></i></button>
                                     <a class="btn btn-outline-secondary" href="{{route('admin.TableEdit.edit',$table->id)}}"><i class="fas fa*3 fa-edit"></i></a>

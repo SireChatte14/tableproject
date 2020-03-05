@@ -8,7 +8,7 @@
   </div>
 </div>
 
-<div class                   ="container-fluid">
+<div class                   ="container-fluid p-4" >
   <div class                 ="row justify-content-md-center ">
       @if($errors->any())
           <div class="alert alert-danger" role="alert">
@@ -28,7 +28,7 @@
                 <div class="invalid-feedback">Please fill out this field.</div>
 
               <label for="discription"  > Anzahl der sitzplätze </label>
-                <textarea type="text" rows="5"  name="numberOfSeats" class="form-control col-md-auto" id="numberOfSeats'" required></textarea>
+                <input type="text" rows="5"  name="numberOfSeats" class="form-control" id="numberOfSeats'" required>
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
 

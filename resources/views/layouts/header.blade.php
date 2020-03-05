@@ -40,7 +40,7 @@
                                <a class  = "nav-item nav-link" href="{{route('admin.TableBook.index')}}" > Anfragen bearbeiten </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" > Tische hinzufügen </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.Calendar.index')}}" > Reservierungen </a>
-
+                               <a class  = "nav-item nav-link" href="{{route('admin.fullcalendar.index')}}" > FullCalendar</a>
                            </div>
                           </div>
 

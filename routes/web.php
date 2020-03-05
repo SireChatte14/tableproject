@@ -40,6 +40,7 @@ Route::prefix('admin')->group (function()
         Route::resource('Calendar', 'CalendarController');
         Route::resource('CalendarDay', 'CalendarDayController');
         Route::resource('TableEdit', 'tableSetUpController');
+        Route::resource('fullcalendar', 'FullCalendarController');
     });
   });
 });
