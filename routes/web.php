@@ -39,6 +39,7 @@ Route::prefix('admin')->group (function()
         Route::resource('MenuEdit', 'AdminMenucontroller');
         Route::resource('Calendar', 'CalendarController');
         Route::resource('CalendarDay', 'CalendarDayController');
+        Route::resource('TableEdit', 'tableSetUpController');
     });
   });
 });

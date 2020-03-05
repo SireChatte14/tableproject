@@ -38,7 +38,7 @@
                            <div class    = "navbar-nav" > <a class= "nav-item nav-link active" href= "/home" > Home <span class = "sr-only" > (current) </span></a>
                                <a class  = "nav-item nav-link" href="{{route('admin.MenuEdit.index')}}" > Speisekarte bearbeiten </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableBook.index')}}" > Anfragen bearbeiten </a>
-                               <a class  = "nav-item nav-link" href="" > Tische hinzufügen </a>
+                               <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" > Tische hinzufügen </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.Calendar.index')}}" > Reservierungen </a>
 
                            </div>

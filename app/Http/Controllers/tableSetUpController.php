@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+
 use App\table;
 use Illuminate\Http\Request;
 
@@ -35,7 +36,21 @@ class tableSetUpController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $this ->_validate($request);
+
+        menu::create($data);
+
+        return redirect(route('admin.MenuEdit.index'))->withsuccess('Der neue Tisch wurde hinzugefügt');
+
+    }
+
+    private function _validate($request) {
+
+        $rules = [
+            'tableNumber' => 'required|integer',
+            'numberOfSeats' => 'required|integer',
+        ];
+        return $this->validate($request, $rules);
     }
 
     /**
@@ -83,19 +98,5 @@ class tableSetUpController extends Controller
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @param Request $request
-     * @return \Illuminate\Http\RedirectResponse
-     */
-    public function save(Request $request)
-    {
-        $table= new table();
-        $table -> tableNumber          = $request -> tableNumber;
-        $table -> numberOfSeats         = $request -> numberOfSeats;
-        $table->save();
 
-        return redirect(route('home'));
-    }
 }

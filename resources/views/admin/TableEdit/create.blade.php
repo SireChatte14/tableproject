@@ -19,16 +19,16 @@
               </ul>
           </div>
       @endif
-          <form action="{{route('admin.MenuEdit.store')}}" method="post">
+          <form action="{{route('admin.TableEdit.store')}}" method="post">
             @csrf
             <div class="form-group">
               <label for="number"   > Tischnummer </label>
-                <input type="text" name="number" class="form-control" id="number" required>
+                <input type="text" name="tableNumber" class="form-control" id="tableNumber" required>
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
 
-              <label for="discription"  > Beschreibung </label>
-                <textarea type="text" rows="5"  name="description" class="form-control col-md-auto" id="description'" required></textarea>
+              <label for="discription"  > Anzahl der sitzplätze </label>
+                <textarea type="text" rows="5"  name="numberOfSeats" class="form-control col-md-auto" id="numberOfSeats'" required></textarea>
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
 
