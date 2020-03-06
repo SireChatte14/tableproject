@@ -2,15 +2,18 @@
 <html>
 <head>
     <meta charset='utf-8' />
-    <link href='../packages/core/main.css' rel='stylesheet' />
-    <link href='../packages/daygrid/main.css' rel='stylesheet' />
-    <link href='../packages/timegrid/main.css' rel='stylesheet' />
-    <link href='../packages/list/main.css' rel='stylesheet' />
-    <script src='../packages/core/main.js'></script>
-    <script src='../packages/interaction/main.js'></script>
-    <script src='../packages/daygrid/main.js'></script>
-    <script src='../packages/timegrid/main.js'></script>
-    <script src='../packages/list/main.js'></script>
+    <link href='{{asset('assets/fullcalendar/packages/core/main.css')}}' rel='stylesheet' />
+    <link href='{{asset('assets/fullcalendar/packages/daygrid/main.css')}}' rel='stylesheet' />
+    <link href='{{asset('assets/fullcalendar/packages/timegrid/main.css')}}‘ rel='stylesheet' />
+    <link href='{{asset('assets/fullcalendar/packages/list/main.css')}}' rel='stylesheet' />
+
+
+    <script src='{{asset('assets/fullcalendar/packages/core/main.js')}}'></script>
+    <script src='{{asset('assets/fullcalendar/packages/interaction/main.js')}}'></script>
+    <script src='{{asset('assets/fullcalendar/packages/daygrid/main')}}'></script>
+    <script src='{{asset('assets/fullcalendar/packages/timegrid/main.js')}}'></script>
+    <script src='{{asset('assets/fullcalendar/packages/list/main.js')}}'></script>
+
     <script>
 
         document.addEventListener('DOMContentLoaded', function() {
