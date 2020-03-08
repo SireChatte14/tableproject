@@ -1,125 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset='utf-8' />
-    <link href='{{asset('assets/fullcalendar/packages/core/main.css')}}' rel='stylesheet' />
-    <link href='{{asset('assets/fullcalendar/packages/daygrid/main.css')}}' rel='stylesheet' />
-    <link href='{{asset('assets/fullcalendar/packages/timegrid/main.css')}}‘ rel='stylesheet' />
-    <link href='{{asset('assets/fullcalendar/packages/list/main.css')}}' rel='stylesheet' />
+@extends('layouts.header')
+
+    <link href="{{ asset('css/fullcalendar/core/main.css' ) }}" rel="stylesheet">
+    <link href="{{ asset('css/fullcalendar/daygrid/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fullcalendar/timegrid/main.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/fullcalendar/list/main.css') }}" rel="stylesheet">
+    <link href="{{asset('css/fullcalendar/style.css')}}" rel="stylesheet">
 
 
-    <script src='{{asset('assets/fullcalendar/packages/core/main.js')}}'></script>
-    <script src='{{asset('assets/fullcalendar/packages/interaction/main.js')}}'></script>
-    <script src='{{asset('assets/fullcalendar/packages/daygrid/main')}}'></script>
-    <script src='{{asset('assets/fullcalendar/packages/timegrid/main.js')}}'></script>
-    <script src='{{asset('assets/fullcalendar/packages/list/main.js')}}'></script>
-
-    <script>
-
-        document.addEventListener('DOMContentLoaded', function() {
-            var Calendar = FullCalendar.Calendar;
-            var Draggable = FullCalendarInteraction.Draggable
-
-            /* initialize the external events
-            -----------------------------------------------------------------*/
-
-            var containerEl = document.getElementById('external-events-list');
-            new Draggable(containerEl, {
-                itemSelector: '.fc-event',
-                eventData: function(eventEl) {
-                    return {
-                        title: eventEl.innerText.trim()
-                    }
-                }
-            });
-
-
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new Calendar(calendarEl, {
-                plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
-                header: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
-                },
-                editable: true,
-                droppable: true, // this allows things to be dropped onto the calendar
-                drop: function(arg) {
-                    // is the "remove after drop" checkbox checked?
-                    if (document.getElementById('drop-remove').checked) {
-                        // if so, remove the element from the "Draggable Events" list
-                        arg.draggedEl.parentNode.removeChild(arg.draggedEl);
-                    }
-                }
-            });
-            calendar.render();
-
-        });
-
-    </script>
-    <style>
-
-        body {
-            margin-top: 40px;
-            font-size: 14px;
-            font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-        }
-
-        #wrap {
-            width: 1100px;
-            margin: 0 auto;
-        }
-
-        #external-events {
-            float: left;
-            width: 150px;
-            padding: 0 10px;
-            border: 1px solid #ccc;
-            background: #eee;
-            text-align: left;
-        }
-
-        #external-events h4 {
-            font-size: 16px;
-            margin-top: 0;
-            padding-top: 1em;
-        }
-
-        #external-events .fc-event {
-            margin: 10px 0;
-            cursor: pointer;
-        }
-
-        #external-events p {
-            margin: 1.5em 0;
-            font-size: 11px;
-            color: #666;
-        }
-
-        #external-events p input {
-            margin: 0;
-            vertical-align: middle;
-        }
-
-        #calendar {
-            float: right;
-            width: 900px;
-        }
-
-    </style>
-</head>
+@section('content')
 <body>
 <div id='wrap'>
 
     <div id='external-events'>
-        <h4>Draggable Events</h4>
+        <h4>Reservierung</h4>
 
         <div id='external-events-list'>
-            <div class='fc-event'>My Event 1</div>
-            <div class='fc-event'>My Event 2</div>
-            <div class='fc-event'>My Event 3</div>
-            <div class='fc-event'>My Event 4</div>
-            <div class='fc-event'>My Event 5</div>
+            <div id="idtable1" class='fc-event'>Table 1</div>
+            <div id="idtable2" class='fc-event'>Table 2</div>
+            <div id="idtable3" class='fc-event'>Table 3</div>
+            <div id="idtable4" class='fc-event'>Table 4</div>
+            <div id="idtable5" class='fc-event'>Table 5</div>
         </div>
 
         <p>
@@ -128,10 +28,21 @@
         </p>
     </div>
 
-    <div id='calendar'></div>
+    <div id='calendar'
+         data-route-load-events="{{route('routeloadEvents') }}"
+    ></div>
 
     <div style='clear:both'></div>
 
 </div>
+
+    <script src="{{ asset('js/fullcalendar/core/main.js') }}" ></script>
+    <script src="{{ asset('js/fullcalendar/interaction/main.js') }}" ></script>
+    <script src="{{ asset('css/fullcalendar/daygrid/main.js') }}" ></script>
+    <script src="{{ asset('css/fullcalendar/timegrid/main.js') }}"></script>
+    <script src="{{ asset('css/fullcalendar/list/main.js') }}" ></script>
+
+    <script src="{{ asset('js/fullcalendar/script.js') }}" ></script>
 </body>
-</html>
+
+@endsection

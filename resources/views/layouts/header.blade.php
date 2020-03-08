@@ -13,14 +13,17 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/e9e2ae9c52.js" crossorigin="anonymous"></script>
+
+
     <!-- Bootstrap CSS -->
     <link rel       ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
     <link rel       ="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
     <link href='https://fonts.googleapis.com/css?famaly=Noto+Sans:400,700' rel='stylesheet' type='txt/css'>
 
-    <!-- Styles -->
+     <!-- Styles -->
     <link href="{{ asset('css/headers.css') }}" rel="stylesheet">
+
 
 </head>
 <header>
@@ -39,8 +42,8 @@
                                <a class  = "nav-item nav-link" href="{{route('admin.MenuEdit.index')}}" > Speisekarte bearbeiten </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableBook.index')}}" > Anfragen bearbeiten </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" > Tische hinzufügen </a>
-                               <a class  = "nav-item nav-link" href="{{route('admin.Calendar.index')}}" > Reservierungen </a>
-                               <a class  = "nav-item nav-link" href="{{route('admin.fullcalendar.index')}}" > FullCalendar</a>
+                               <a class  = "nav-item nav-link" href="{{route('admin.Calendar.index')}}" > </a>
+                               <a class  = "nav-item nav-link" href="{{route('admin.fullcalendar.index')}}" > Reservierungen </a>
                            </div>
                           </div>
 

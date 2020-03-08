@@ -41,6 +41,7 @@ Route::prefix('admin')->group (function()
         Route::resource('CalendarDay', 'CalendarDayController');
         Route::resource('TableEdit', 'tableSetUpController');
         Route::resource('fullcalendar', 'FullCalendarController');
+
     });
   });
 });
@@ -65,3 +66,5 @@ Route::view('tablebook','tablebook');
 Route::post('submit','EntryController@save');
 
 Route::view('adminArea','adminArea');
+
+Route::get('loadEvents', 'EventController@loadEvents')->name('routeloadEvents');
