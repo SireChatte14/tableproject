@@ -40,7 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
         },
-        locale : 'de',
         navLinks: true,
         eventLimit:true,
         selectable: true,
@@ -65,9 +64,12 @@ document.addEventListener('DOMContentLoaded', function() {
         select: function (event) {
             alert('Event Select');
         },
+
         events: routeEvents('routeloadEvents'),
     });
     calendar.render();
+
+
 
 });
 

@@ -67,4 +67,4 @@ Route::post('submit','EntryController@save');
 
 Route::view('adminArea','adminArea');
 
-Route::get('loadEvents', 'EventController@loadEvents')->name('routeloadEvents');
+Route::get('fullcalendar.loadEvents', 'EventController@loadEvents')->name('routeloadEvents');
