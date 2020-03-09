@@ -4,7 +4,6 @@
     <link href="{{ asset('css/fullcalendar/timegrid/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fullcalendar/daygrid/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fullcalendar/list/main.css') }}" rel="stylesheet">
-
     <link href="{{ asset('css/fullcalendar/style.css')}}" rel="stylesheet">
 
     <script src="{{ asset('js/fullcalendar/core/main.js') }}" ></script>
@@ -13,9 +12,7 @@
     <script src="{{ asset('css/fullcalendar/daygrid/main.js') }}" ></script>
     <script src="{{ asset('css/fullcalendar/timegrid/main.js') }}"></script>
     <script src="{{ asset('css/fullcalendar/list/main.js') }}" ></script>
-
     <script src="{{ asset('js/fullcalendar/script.js') }}" ></script>
-
     <script src="{{ asset('js/fullcalendar/calendar.js') }}" ></script>
 
 
