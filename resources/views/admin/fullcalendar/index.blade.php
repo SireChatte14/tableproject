@@ -4,20 +4,17 @@
     <link href="{{ asset('css/fullcalendar/timegrid/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fullcalendar/daygrid/main.css') }}" rel="stylesheet">
     <link href="{{ asset('css/fullcalendar/list/main.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/fullcalendar/style.css')}}" rel="stylesheet">
 
-    <script src="{{ asset('js/fullcalendar/core/main.js') }}" ></script>
-    <script src="{{ asset('js/fullcalendar/core/locales/de.js') }}" ></script>
-    <script src="{{ asset('js/fullcalendar/interaction/main.js') }}" ></script>
-    <script src="{{ asset('css/fullcalendar/daygrid/main.js') }}" ></script>
-    <script src="{{ asset('css/fullcalendar/timegrid/main.js') }}"></script>
-    <script src="{{ asset('css/fullcalendar/list/main.js') }}" ></script>
-    <script src="{{ asset('js/fullcalendar/script.js') }}" ></script>
-    <script src="{{ asset('js/fullcalendar/calendar.js') }}" ></script>
+    <link href="{{ asset('css/style.css')}}" rel="stylesheet">
 
+    <meta name="csrf-token" content="{{csrf_token()}}">
 
 @section('content')
 <body>
+
+@include('admin.fullcalendar.modal-calendar')
+
+
 <div id='wrap'>
 
     <div id='external-events'>
@@ -39,16 +36,41 @@
             <label for='drop-remove'>remove after drop</label>
         </p>
     </div>
-    @csrf
+
     <div id='calendar'
-         data-route-load-events="{{route('routeloadEvents') }}"
+         data-route-load-events="{{route('admin.routeLoadEvents')}}"
+         data-route-event-update="{{route('admin.routeEventUpdate')}}"
+         data-route-event-store="{{route('admin.routeEventStore')}}"
     ></div>
 
     <div style='clear:both'></div>
 
 </div>
 
+<script src="{{ asset('js/fullcalendar/core/main.js') }}" ></script>
 
-</body>
+<script src="{{ asset('js/fullcalendar/interaction/main.js') }}" ></script>
+
+<script src="{{ asset('css/fullcalendar/daygrid/main.js') }}" ></script>
+
+<script src="{{ asset('css/fullcalendar/timegrid/main.js') }}"></script>
+
+<script src="{{ asset('css/fullcalendar/list/main.js') }}" ></script>
+
+<script src="{{ asset('js/fullcalendar/core/locales/de.js') }}" ></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+
+<script src="{{ asset('js/script.js') }}" ></script>
+
+<script src="{{ asset('js/calendar.js') }}" ></script>
 
 @endsection
