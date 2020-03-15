@@ -41,6 +41,7 @@
          data-route-load-events="{{route('admin.routeLoadEvents')}}"
          data-route-event-update="{{route('admin.routeEventUpdate')}}"
          data-route-event-store="{{route('admin.routeEventStore')}}"
+         data-route-event-delete="{{route('admin.routeEventDelete')}}"
     ></div>
 
     <div style='clear:both'></div>

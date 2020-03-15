@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         eventClick: function (element) {
 
+            clearMessage('#message');
             resetForm("#formEvent");
 
             $("#modalCalendar").modal('show');
@@ -114,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         select: function (element) {
 
+            clearMessage('#message');
             resetForm("#formEvent");
 
             $("#modalCalendar").modal('show');

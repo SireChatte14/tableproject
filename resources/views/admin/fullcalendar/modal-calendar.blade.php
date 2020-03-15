@@ -13,24 +13,25 @@
 
             <!-- Modal body -->
             <div class="modal-body">
+                <div id="message"></div>
                 <form id="formEvent">
                     <div class="form-group row">
                         <label for="title" class="col-sm-4 col-form-label">Name</label>
                         <div class="col-sm-8">
                             <input type="text" name="title" class="form-control" id="title" >
-                            <input type="text" name="id">
+                            <input type="hidden" name="id">
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="start" class="col-sm-4 col-form-label">von</label>
+                        <label for="start" class="col-sm-4 col-form-label">Anfangs Datum</label>
                         <div class="col-sm-8">
-                            <input type="text" name="start" class="form-control date-time" id="start" >
+                            <input type="text" name="start" class="form-control date-time" data-mask="00/00/0000 00-00-00"  id="start" >
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="end" class="col-sm-4 col-form-label">bis</label>
+                        <label for="end" class="col-sm-4 col-form-label">End Datum</label>
                         <div class="col-sm-8">
-                            <input type="text" name="end" class="form-control date-time" id="end" >
+                            <input type="text" name="end" class="form-control date-time" data-mask="00/00/0000 00-00-00" id="end" >
                         </div>
                     </div>
                     <div class="form-group row">

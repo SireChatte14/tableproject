@@ -8,6 +8,24 @@ $(function () {
         }
     });
 
+
+    $(".deleteEvent").click(function () {
+
+        let id = $("#modalCalendar input[name='id']").val();
+
+        let Event = {
+            id: id,
+            _method:'DELETE'
+        };
+
+       let route = routeEvents('routeEventDelete');
+
+        sendEvent(route,Event);
+    });
+
+
+
+
     $(".saveEvent").click(function () {
 
         let id = $("#modalCalendar input[name='id']").val();
@@ -55,15 +73,39 @@ function sendEvent(route,data_){
             if(json){
                 location.reload();
             }
+        },
+        error:function (json) {
+
+            let responseJSON = json.responseJSON.errors;
+
+            $("#message").html(loadErrors(responseJSON));
         }
 
     });
 }
 
+function loadErrors(response) {
+
+    let boxAlert = `<div class="alert alert-danger">`;
+
+    for (let fields in response){
+        boxAlert += `<span>${response[fields]}</span><br/>`;
+    }
+    boxAlert +=`</div>`;
+
+    return boxAlert.replace(/\,/g,"<br/>");
+}
 
 function routeEvents (route){
+
     return document.getElementById('calendar').dataset[route];
-};
+}
+
+function clearMessage(element) {
+
+    $(element).text('');
+
+}
 
 function resetForm(form) {
     $(form)[0].reset();
