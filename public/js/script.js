@@ -24,8 +24,6 @@ $(function () {
     });
 
 
-
-
     $(".saveEvent").click(function () {
 
         let id = $("#modalCalendar input[name='id']").val();

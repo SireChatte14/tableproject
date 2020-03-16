@@ -47,11 +47,11 @@ document.addEventListener('DOMContentLoaded', function() {
         selectable: true,
         editable: true,
         droppable: true, // this allows things to be dropped onto the calendar
-        drop: function(arg) {
+        drop: function(element) {
             // is the "remove after drop" checkbox checked?
             if (document.getElementById('drop-remove').checked) {
                 // if so, remove the element from the "Draggable Events" list
-                arg.draggedEl.parentNode.removeChild(arg.draggedEl);
+                element.draggedEl.parentNode.removeChild(element.draggedEl);
             }
         },
         eventDrop: function (element) {
@@ -61,9 +61,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let newEvent = {
                 _method:'PUT',
+                title: element.event.title,
                 id: element.event.id,
                 start: start,
-                end: end,
+                end: end
             };
 
             sendEvent(routeEvents('routeEventUpdate'),newEvent);

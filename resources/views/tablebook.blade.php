@@ -25,8 +25,8 @@
                 <label> Datum </label><br>
                 <br>
 
-                <label> um </label>
-                <input type  ="time" style="border-radius: 5px; width: 150px ; height: 25px " name="fromtime" placeholder="Uhrzeit" required>
+                <label> ab </label>
+                <input  type  ="time" style="border-radius: 5px; width: 150px ; height: 25px " name="fromtime" placeholder="Uhrzeit" required>
                 <label> Uhr </label><br>
                 <br>
                 <label> Wie lange denken Sie, wollen Sie bleiben ? </label><br>

@@ -28,10 +28,11 @@ class EntryController extends Controller
     public function save(Request $request)
     {
         $entry = new Entry;
-        $entry-> NumberOfPeople   = $request -> NumberOfPeople;
+        $entry-> NumberOfPeople         = $request -> NumberOfPeople;
         $entry -> bookingdate           = $request -> bookingdate;
-        $entry -> fromtime              = $request -> fromtime;
+        $entry -> fromtime              = $this -> changefromTime($frometime);
         $entry-> LengthOfStay           = $request -> LengthOfStay;
+        $entry-> endTime                = $this -> changeTime($frometime,$LengthOfStay);
         $entry -> sms                   = $request -> sms;
         $entry -> FirstName             = $request -> FirstName;
         $entry-> SecondName             = $request -> SecondName;
@@ -47,5 +48,21 @@ class EntryController extends Controller
         $entrys = EntryController:: all();
 
         return response() ->json($entrys);
+    }
+
+    public function changeTime ($fromtime,$LengthOfStay){
+
+        $var = '+'.$LengthOfStay.'minutes';
+
+       $end = date('H:i:s',strtotime($var,strtotime($fromtime)));
+
+       return $end;
+    }
+
+    public function changefromTime ($fromtime) {
+
+        $start = date('H:i:s',strtotime($fromtime));
+
+        return $start;
     }
 }
