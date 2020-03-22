@@ -16,6 +16,7 @@ class tableSetUpController extends Controller
      */
     public function index(table $tables)
     {
+
         return view('admin.TableEdit.index',compact('tables'));
     }
 
@@ -50,6 +51,7 @@ class tableSetUpController extends Controller
         $rules = [
             'tableNumber' => 'required|integer',
             'numberOfSeats' => 'required|integer',
+            'color' => 'required',
         ];
         return $this->validate($request, $rules);
     }

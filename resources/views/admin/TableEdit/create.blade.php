@@ -27,10 +27,17 @@
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
 
-              <label for="discription"  > Anzahl der sitzplätze </label>
-                <input type="text" rows="5"  name="numberOfSeats" class="form-control" id="numberOfSeats'" required>
+              <label for="numberOfSeats"  > Anzahl der Sitzplätze </label>
+                <input type="text"  name="numberOfSeats" class="form-control" id="numberOfSeats'" required>
                 <div class="valid-feedback">Valid.</div>
                 <div class="invalid-feedback">Please fill out this field.</div>
+
+                <label for="color"  > Tisch Kalenderfarbe </label>
+                <input type="color"  name="color" class="form-control" id="color'" required>
+                <div class="valid-feedback">Valid.</div>
+                <div class="invalid-feedback">Please fill out this field.</div>
+
+
 
             </div>
                 <button type="submit" class="btn btn-primary">Tisch speichern</button>

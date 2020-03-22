@@ -15,8 +15,9 @@ class CreateTablesTable extends Migration
     {
         Schema::create('tables', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('tableNumber');
+            $table->integer('tableNumber')->unique();
             $table->integer('numberOfSeats');
+            $table->string('color',7);
             $table->timestamp('deleted_at');
             $table->timestamps();
         });

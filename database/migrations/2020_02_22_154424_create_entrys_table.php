@@ -20,7 +20,7 @@ class CreateEntrysTable extends Migration
             $table->string('fromtime');
             $table->string('LengthOfStay');
             $table->string('endTime');
-            $table->string('sms')->nullable();
+            $table->string('email')->nullable();
             $table->string('FirstName');
             $table->string('SecondName');
             $table->string('phone');
