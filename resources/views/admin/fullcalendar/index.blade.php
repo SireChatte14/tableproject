@@ -30,11 +30,6 @@
             <div id="idtable7" class='fc-event'>Table 7</div>
             <div id="idtable8" class='fc-event'>Table 8</div>
         </div>
-
-        <p>
-            <input type='checkbox' id='drop-remove' />
-            <label for='drop-remove'>remove after drop</label>
-        </p>
     </div>
 
     <div id='calendar'
@@ -60,15 +55,15 @@
 
 <script src="{{ asset('js/fullcalendar/core/locales/de.js') }}" ></script>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" ></script>
+<script src="http://code.jquery.com/jquery-3.4.1.min.js" ></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="http://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
 <script src="{{ asset('js/script.js') }}" ></script>
 

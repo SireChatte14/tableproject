@@ -47,6 +47,12 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label for="table_id" class="col-sm-4 col-form-label">Tisch Nummer</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="table_id" class="form-control" id="table_id" >
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label for="color" class="col-sm-4 col-form-label">Tisch</label>
                         <div class="col-sm-8">
                             <input type="color" name="color" class="form-control" id="color" >

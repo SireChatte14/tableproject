@@ -52,7 +52,7 @@ $(function () {
 
         let route;
 
-        if(id == ''){
+        if( id == ''){
             route=routeEvents('routeEventStore');
         }else{
             route=routeEvents('routeEventUpdate');
@@ -111,3 +111,5 @@ function clearMessage(element) {
 function resetForm(form) {
     $(form)[0].reset();
 }
+
+

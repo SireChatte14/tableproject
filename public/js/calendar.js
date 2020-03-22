@@ -2,7 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function() {
     var Calendar = FullCalendar.Calendar;
-    var Draggable = FullCalendarInteraction.Draggable
+    var Draggable = FullCalendarInteraction.Draggable;
 
     /* initialize the external events
     -----------------------------------------------------------------*/
@@ -64,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 title: element.event.title,
                 NumberOfPeople: element.event.extendedProps.NumberOfPeople,
                 phone: element.event.extendedProps.phone,
+                table_id: element.event.extendedProps.table_id,
                 id: element.event.id,
                 start: start,
                 end: end
@@ -93,6 +94,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let phone = element.event.extendedProps.phone;
             $("#modalCalendar input[name='phone']").val(phone);
+
+            let table_id = element.event.extendedProps.table_id;
+            $("#modalCalendar input[name='table_id']").val(table_id);
 
             let start = moment(element.event.start).format("DD/MM/YYYY HH-mm-ss");
             $("#modalCalendar input[name='start']").val(start);
