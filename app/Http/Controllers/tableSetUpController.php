@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use App\menu;
 use App\table;
 use Illuminate\Http\Request;
 
@@ -83,24 +84,32 @@ class tableSetUpController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param $table
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $table)
     {
-        //
+        table::where('id',$table)
+            ->update([
+                'numberOfSeats'=> $request['numberOfSeats'],
+                'color'=> $request['color'],
+            ]);
+
+        return redirect(route('admin.TableEdit.index'))->withsuccess('Der Tisch wurde aktualisiert');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param $table
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($table)
     {
-        //
+        table::where('id',$table)
+            ->delete();
+        return redirect(route('admin.TableEdit.index'))->withdanger('Der Tisch wurde gelöscht');
     }
 
 
