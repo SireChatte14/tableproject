@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\entry;
 use App\Event;
-use App\table;
 use Illuminate\Http\Request;
 
 class AdminTablecontroller extends Controller
@@ -84,11 +83,11 @@ class AdminTablecontroller extends Controller
      * @param $entry
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit($table) {
+    public function edit($entry) {
 
-        $table = table::findOrFail($table);
+        $entry = entry::findOrFail($entry);
 
-        return view('admin.TableBook.edit', compact('table'));
+        return view('admin.TableBook.edit', compact('entry'));
 
     }
 
@@ -114,7 +113,7 @@ class AdminTablecontroller extends Controller
     {
         entry::where('id',$entry)
             ->delete();
-        return redirect(route('admin.TableBook.index'))->withdanger('Die Reservierung  wurde an den Kalender übergeben');
+        return redirect(route('admin.TableBook.index'))->withsuccess('Die Reservierung  wurde an den Kalender übergeben');
     }
 
 

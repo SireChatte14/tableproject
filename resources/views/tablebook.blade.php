@@ -40,7 +40,7 @@
                 <br>
 
                 <div class="custom-control custom-checkbox mb-3">
-                  <input type="checkbox" class="custom-control-input" id="customCheck" name="sms" value="ja">
+                  <input type="checkbox" class="custom-control-input" id="customCheck" name="email" value="ja">
                   <label class="custom-control-label" for="customCheck"> Ja, ich möchte die Bestätigung per e-Mail erhalten. </label><br>
                 </div>
                   <label> Mit dem Absenden der Reservierung erkläre ich mich mit den Datenschutzrechtlinien einverstanden. </label><br>

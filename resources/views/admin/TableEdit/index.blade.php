@@ -18,12 +18,14 @@
                         <tr>
                             <th> Tischnummer </th>
                             <th> Anzahl der Sitzplätze</th>
+                            <th> Tisch Kalenderfarbe </th>
                             <th> Optionen </th>
                          </tr>
                          <tr>
                             @foreach($tables->all() AS $table)
-                            <td>{{$table->tableNumber}}</td>
-                            <td>{{$table->numberOfSeats}}</td>
+                                 <td>{{$table->tableNumber}}</td>
+                                 <td>{{$table->numberOfSeats}}</td>
+                                 <td>{{$table->color}}</td>
                             <td>
                                 <form action="{{route('admin.TableEdit.destroy',$table->id)}}" method="post">
                                 <div class="btn-group">

@@ -10,5 +10,5 @@ class table extends Model
     protected $table='tables';
     use SoftDeletes;
     protected $dates = ['deleted_at'];
-    protected $fillable =['tableNumber','numberOfSeats'];
+    protected $fillable =['tableNumber','numberOfSeats','color'];
 }

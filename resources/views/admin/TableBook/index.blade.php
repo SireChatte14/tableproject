@@ -34,7 +34,7 @@
                                     <td>{{$entry->bookingdate}}</td>
                                     <td>{{$entry->fromtime}}</td>
                                     <td>{{$entry->endTime}} </td>
-                                    <td>{{$entry->sms}}</td>
+                                    <td>{{$entry->email}}</td>
                                     <td>{{$entry->FirstName}}</td>
                                     <td>{{$entry->SecondName}}</td>
                                     <td>{{$entry->phone}}</td>
