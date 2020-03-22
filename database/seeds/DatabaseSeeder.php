@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             EventTableSeeder::class,
             RoleTableSeeder::class,
+            MenuTableSeeder::class,
         ]);
 
 
