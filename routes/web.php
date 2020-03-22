@@ -45,6 +45,7 @@ Route::prefix('admin')->group (function()
         Route::put('/event-update','Eventcontroller@update')->name('routeEventUpdate');
         Route::post('/event-store','Eventcontroller@store')->name('routeEventStore');
         Route::delete('/event-delete','Eventcontroller@destroy')->name('routeEventDelete');
+
     });
   });
 });
@@ -53,8 +54,6 @@ Route::prefix('admin')->group (function()
 Auth::routes(['verify'=> true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
-
-Route::view('tablebook','tablebook');
 
 Route::view('index','index');
 

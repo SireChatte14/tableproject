@@ -35,54 +35,43 @@
                         </button>
                           <div class     = "collapse navbar-collapse" id= "navbarNavAltMarkup" >
                               <div class = "navbar-nav" > <a class= "nav-item nav-link active" href= "" > Home <span class = "sr-only" > (current) </span></a>
-                                    <a class  = "nav-item nav-link" href= "MenuCard"> Speisekarte </a>
-                                    <a class  = "nav-item nav-link" href= "tablebook" > Tischreservierung </a>
-                                     <a class  = "nav-item nav-link" href= "impressum" > Impressum</a>
-                                    <a class  = "nav-item nav-link" href= "datenschutz" > Datenschutz </a>
+                                    <a class  = "nav-item nav-link"  href= "MenuCard"> Speisekarte </a>
+                                    <a class  = "nav-item nav-link"  href= "tablebook" > Tischreservierung </a>
+                                     <a class = "nav-item nav-link"  href= "impressum" > Impressum</a>
+                                    <a class  = "nav-item nav-link"  href= "datenschutz" > Datenschutz </a>
                                     @can('is-admin')
-                                    <a class  = "nav-item nav-link" href= "adminArea" > Adminbereich </a>
+                                    <a class  = "nav-item nav-link"  href= "adminArea" > Adminbereich </a>
                                     @endcan
                               </div>
-                          </div>
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
+                              @guest
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <i class="fa fa-user"></i>
-                                    @auth()
-                                    {{ Auth::user()->name }} ({{auth()->user()->role()->pluck('name')->implode(",")}})
+                                     @if (Route::has('register'))
+                                        <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                        </li>
+                                    @endif
                                     @else
-                                    Gast
-                                    @endauth
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
+                                        <li class="nav-item dropdown">
+                                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                            <i class="fa fa-user"></i>
+                                             @auth()
+                                                {{ Auth::user()->name }} ({{auth()->user()->role()->pluck('name')->implode(",")}})
+                                             @else
+                                                Gast
+                                            @endauth
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                                 <a class="dropdown-item" href="{{ route('logout') }}"
+                                                    onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
+                                                        {{ __('Logout') }}
+                                                 </a>
+                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            @csrf
+                                            </form>
+                                        </li>
+                          </div>d´
+                       @endguest
                     </ul>
             </div>
         </nav>

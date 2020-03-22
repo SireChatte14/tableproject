@@ -27,6 +27,9 @@ class EntryController extends Controller
      */
     public function save(Request $request)
     {
+        $frometime = $request -> fromtime;
+        $LengthOfStay = $request -> LengthOfStay;
+
         $entry = new Entry;
         $entry-> NumberOfPeople         = $request -> NumberOfPeople;
         $entry -> bookingdate           = $request -> bookingdate;
@@ -42,6 +45,8 @@ class EntryController extends Controller
 
         return redirect(route('home'));
     }
+
+
 
     public function loadEntrys(){
 

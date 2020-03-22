@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
             let newEvent = {
                 _method:'PUT',
                 title: element.event.title,
+                NumberOfPeople: element.event.extendedProps.NumberOfPeople,
+                phone: element.event.extendedProps.phone,
                 id: element.event.id,
                 start: start,
                 end: end
@@ -77,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
             resetForm("#formEvent");
 
             $("#modalCalendar").modal('show');
-            $("#modalCalendar #titleModal").text('Reservierung bearbeiten');
+            $("#modalCalendar #titleModal").text('Reservierung');
             $("#modalCalendar button.deleteEvent").css("display","flex");
 
             let id = element.event.id;
@@ -85,6 +87,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let title = element.event.title;
             $("#modalCalendar input[name='title']").val(title);
+
+            let NumberOfPeople = element.event.extendedProps.NumberOfPeople;
+            $("#modalCalendar input[name='NumberOfPeople']").val(NumberOfPeople);
+
+            let phone = element.event.extendedProps.phone;
+            $("#modalCalendar input[name='phone']").val(phone);
 
             let start = moment(element.event.start).format("DD/MM/YYYY HH-mm-ss");
             $("#modalCalendar input[name='start']").val(start);
@@ -97,6 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let description = element.event.extendedProps.description;
             $("#modalCalendar textarea[name='description']").val(description);
+
+            console.log(element);
 
         },
 

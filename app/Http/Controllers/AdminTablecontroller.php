@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\entry;
+use App\Event;
+use App\table;
 use Illuminate\Http\Request;
 
 class AdminTablecontroller extends Controller
@@ -20,28 +22,49 @@ class AdminTablecontroller extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-
-
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-   {
+    public function store (Request $request)
+    {
 
+        $frometime = $request -> fromtime;
+        $LengthOfStay = $request -> LengthOfStay;
+        $FirstName = $request -> FirstName;
+        $SecondName = $request -> SecondName;
+        $bookingdate = $request -> bookingdate;
 
-      }
+        $event = new event;
+        $event -> title                 = ($FirstName.' '.$SecondName);
+        $event -> start                 = $this -> changefromTime($bookingdate,$frometime);
+        $event-> NumberOfPeople         = $request -> NumberOfPeople;
+        $event-> end                    = $this -> changeTime($bookingdate,$frometime,$LengthOfStay);
+        $event-> color                   = '#F89127';
+        $event -> phone                 = $request -> phone;
+        $event -> description               = $request -> message;
+        $event->save();
+
+        return redirect(route('admin.fullcalendar.index'));
+
+    }
+
+    public function changeTime ($bookingdate,$fromtime,$LengthOfStay){
+
+        $var = '+'.$LengthOfStay.'minutes';
+
+        $end = $bookingdate.' '.date('H:i:s',strtotime($var,strtotime($fromtime)));
+
+        return $end;
+    }
+
+    public function changefromTime ($bookingdate,$fromtime) {
+
+        $start = $bookingdate.date(' H:i:s',strtotime($fromtime));
+
+        return $start;
+    }
 
 
     /**
@@ -58,12 +81,15 @@ class AdminTablecontroller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
-     * @return void
+     * @param $entry
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit($id)
-    {
-        //
+    public function edit($table) {
+
+        $table = table::findOrFail($table);
+
+        return view('admin.TableBook.edit', compact('table'));
+
     }
 
     /**
@@ -84,8 +110,22 @@ class AdminTablecontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($entry)
     {
-        //
+        entry::where('id',$entry)
+            ->delete();
+        return redirect(route('admin.TableBook.index'))->withdanger('Die Reservierung  wurde an den Kalender übergeben');
     }
+
+
+
+
+    public function loadEntrys(){
+
+        $entrys = EntryController:: all();
+
+        return response() ->json($entrys);
+    }
+
+
 }

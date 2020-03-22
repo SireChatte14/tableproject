@@ -41,17 +41,13 @@
                            <div class    = "navbar-nav" > <a class= "nav-item nav-link active" href= "/home" > Home <span class = "sr-only" > (current) </span></a>
                                <a class  = "nav-item nav-link" href="{{route('admin.MenuEdit.index')}}" > Speisekarte bearbeiten </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableBook.index')}}" > Anfragen bearbeiten </a>
-                               <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" > Tische hinzufügen </a>
-                               <a class  = "nav-item nav-link" href="{{route('admin.Calendar.index')}}" > </a>
+                               <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" > Tische bearbeiten</a>
                                <a class  = "nav-item nav-link" href="{{route('admin.fullcalendar.index')}}" > Reservierungen </a>
                            </div>
                           </div>
 
-                    </ul>
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
+
                         @guest
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -70,7 +66,6 @@
                                     @else
                                         Gast
                                     @endauth
-                                </a>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

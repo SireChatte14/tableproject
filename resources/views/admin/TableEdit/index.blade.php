@@ -9,7 +9,7 @@
 
         <div class="col-12 mb-3">
             <h1> Tische </h1>
-            <a role="button" href="{{route('admin.TableEdit.create')}}" class="btn btn-sm btn-outline-primary my-2">Tisch hinzufügen</a>
+            <a role="button" href="{{route('admin.TableEdit.create')}}" class="btn btn-sm btn-outline-primary my-2"> Tisch hinzufügen </a>
         </div>
 
             <div class="col-12 ">

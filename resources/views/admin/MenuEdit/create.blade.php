@@ -4,7 +4,7 @@
 
 <div class                   ="container-fluid">
   <div class                 ="row justify-content-md-center">
-    <h1> Neues Gericht hinzufügen </h1>
+    <h1> Reservierung </h1>
   </div>
 </div>
 
@@ -20,9 +20,9 @@
           </div>
       @endif
           <form action="{{route('admin.MenuEdit.store')}}" method="post">
-                @include('admin.MenuEdit._form')
+                @include('admin.TableBook._form')
 
-                <button type="submit" class="btn btn-dark">Gericht speichern</button>
+                <button type="submit" class="btn btn-dark">Reservierung speichern</button>
           </form>
     </div>
 </div>

@@ -29,7 +29,7 @@
                     <div class="invalid-feedback">{{$errors->first('tableNumber)}}</div>
 
                     <label for="discription"  > Gericht </label>
-                    <input type="text" rows="5"  name="description" value="{{ $table->nuberOfSeats }}" class="form-control col-md-auto @if ($errors->has('numberOfSeats')) is-invalid @endif " id="description'" required></input>
+                    <input type="text" rows="5"  name="description" value="{{ $table->numberOfSeats }}" class="form-control col-md-auto @if ($errors->has('numberOfSeats')) is-invalid @endif " id="description'" required></input>
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">{{$errors->first('numberOfSeats')}}</div>
 

@@ -35,6 +35,18 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label for="NumberOfPeople" class="col-sm-4 col-form-label">Personen</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="NumberOfPeople" class="form-control" id="NumberOfPeople" >
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="phone" class="col-sm-4 col-form-label">Telefon</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="phone" class="form-control" id="phone" >
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <label for="color" class="col-sm-4 col-form-label">Tisch</label>
                         <div class="col-sm-8">
                             <input type="color" name="color" class="form-control" id="color" >

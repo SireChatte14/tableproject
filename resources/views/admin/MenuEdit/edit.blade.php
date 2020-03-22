@@ -34,9 +34,7 @@
                     <div class="invalid-feedback">{{$errors->first('description')}}</div>
 
                     <label for="price"  > Preis </label>
-                    <input type="text" name="price" value="{{ $menu->price }}" class="form-control @if ($errors->has('price')) is-invalid @endif " id="price'" autocomplete="off" required>
-                    <div class="valid-feedback">Valid.</div>
-                    <div class="invalid-feedback">{{$errors->first('price')}}</div>
+                    <input type="text" row="5" name="price" value="{{ $menu->price }}" class="form-control @if ($errors->has('price')) is-invalid @endif " id="price'" autocomplete="off">
                 </div>
 
 
