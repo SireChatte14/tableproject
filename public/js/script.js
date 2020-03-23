@@ -24,6 +24,7 @@ $(function () {
     });
 
 
+
     $(".saveEvent").click(function () {
 
         let id = $("#modalCalendar input[name='id']").val();
@@ -31,6 +32,8 @@ $(function () {
         let title = $("#modalCalendar input[name='title']").val();
 
         let NumberOfPeople = $("#modalCalendar input[name='NumberOfPeople']").val();
+
+        let table_id = $("#modalCalendar input[name='table_id']").val();
 
         let start = moment($("#modalCalendar input[name='start']").val(),"DD/MM/YYYY HH-mm-ss").format("YYYY-MM-DD HH:mm:ss");
 
@@ -44,6 +47,7 @@ $(function () {
             id: id,
             title : title,
             NumberOfPeople: NumberOfPeople,
+            table_id: table_id,
             start: start,
             end: end,
             color: color,

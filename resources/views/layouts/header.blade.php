@@ -29,11 +29,12 @@
 <header>
 
      <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <img src="{{URL::asset('img/Logo.jpg')}}" alt="Logo" style="width:50px;">
+            <div class="navbar-dark" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
-                        <img src="{{URL::asset('img/Logo.jpg')}}" alt="Logo" style="width:50px;">
+
                         <button class    = "navbar-toggler" type= "button" data-toggle= "collapse" data-target= "#navbarNavAltMarkup" aria-controls= "navbarNavAltMarkup" aria-expanded= "false" aria-label= "Toggle navigation" >
                           <span class    = "navbar-toggler-icon" ></span>
                         </button>

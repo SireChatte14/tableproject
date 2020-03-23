@@ -110,8 +110,6 @@ document.addEventListener('DOMContentLoaded', function() {
             let description = element.event.extendedProps.description;
             $("#modalCalendar textarea[name='description']").val(description);
 
-            console.log(element);
-
         },
 
         eventResize: function (element) {

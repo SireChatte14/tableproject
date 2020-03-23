@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\entry;
 use App\Event;
+use App\table;
 use Illuminate\Http\Request;
 
 class AdminTablecontroller extends Controller
@@ -34,15 +35,17 @@ class AdminTablecontroller extends Controller
         $FirstName = $request -> FirstName;
         $SecondName = $request -> SecondName;
         $bookingdate = $request -> bookingdate;
+        $table_id = $request->table_id;
 
         $event = new event;
-        $event -> title                 = ($FirstName.' '.$SecondName);
+        $event -> name                  = ($FirstName.' '.$SecondName);
+        $event -> title                 = ('Tisch'.' '.$table_id);
         $event -> start                 = $this -> changefromTime($bookingdate,$frometime);
         $event-> NumberOfPeople         = $request -> NumberOfPeople;
         $event-> end                    = $this -> changeTime($bookingdate,$frometime,$LengthOfStay);
-        $event-> color                   = '#F89127';
+        $event-> color                  = $this ->changeColor($table_id);
         $event -> phone                 = $request -> phone;
-        $event -> description               = $request -> message;
+        $event -> description           = $request -> message;
         $event->save();
 
         return redirect(route('admin.fullcalendar.index'));
@@ -63,6 +66,15 @@ class AdminTablecontroller extends Controller
         $start = $bookingdate.date(' H:i:s',strtotime($fromtime));
 
         return $start;
+    }
+
+    public function changeColor ($table_id) {
+
+        $data = table:: where('tableNumber',$table_id)->first();
+
+        $color = $data->color;
+
+        return $color;
     }
 
 
