@@ -21,14 +21,14 @@
         <h4>Reservierung</h4>
 
         <div id='external-events-list'>
-            <div id="idtable1" class='fc-event'>Table 1</div>
-            <div id="idtable2" class='fc-event'>Table 2</div>
-            <div id="idtable3" class='fc-event'>Table 3</div>
-            <div id="idtable4" class='fc-event'>Table 4</div>
-            <div id="idtable5" class='fc-event'>Table 5</div>
-            <div id="idtable6" class='fc-event'>Table 6</div>
-            <div id="idtable7" class='fc-event'>Table 7</div>
-            <div id="idtable8" class='fc-event'>Table 8</div>
+            <div id="idtable1" class='fc-event'>Tisch 1 / 4 Pers.</div>
+            <div id="idtable2" class='fc-event'>Tisch 2 / 6 Pers.</div>
+            <div id="idtable3" class='fc-event'>Tisch 3</div>
+            <div id="idtable4" class='fc-event'>Tisch 4</div>
+            <div id="idtable5" class='fc-event'>Tisch 5</div>
+            <div id="idtable6" class='fc-event'>Tisch 6</div>
+            <div id="idtable7" class='fc-event'>Tisch 7</div>
+            <div id="idtable8" class='fc-event'>Tisch 8</div>
         </div>
     </div>
 

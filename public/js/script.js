@@ -33,7 +33,7 @@ $(function () {
 
         let NumberOfPeople = $("#modalCalendar input[name='NumberOfPeople']").val();
 
-        let table_id = $("#modalCalendar input[name='table_id']").val();
+        let name = $("#modalCalendar input[name='name']").val();
 
         let start = moment($("#modalCalendar input[name='start']").val(),"DD/MM/YYYY HH-mm-ss").format("YYYY-MM-DD HH:mm:ss");
 
@@ -47,7 +47,7 @@ $(function () {
             id: id,
             title : title,
             NumberOfPeople: NumberOfPeople,
-            table_id: table_id,
+            name: name,
             start: start,
             end: end,
             color: color,

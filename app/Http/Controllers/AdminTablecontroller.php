@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\entry;
 use App\Event;
+use App\Events\confirmationEvent;
 use App\table;
 use Illuminate\Http\Request;
 
@@ -29,7 +30,6 @@ class AdminTablecontroller extends Controller
      */
     public function store (Request $request)
     {
-
         $frometime = $request -> fromtime;
         $LengthOfStay = $request -> LengthOfStay;
         $FirstName = $request -> FirstName;
@@ -125,6 +125,7 @@ class AdminTablecontroller extends Controller
     {
         entry::where('id',$entry)
             ->delete();
+
         return redirect(route('admin.TableBook.index'))->withsuccess('Die Reservierung  wurde an den Kalender übergeben');
     }
 

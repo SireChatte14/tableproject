@@ -66,7 +66,7 @@
 
 
                     <label for="message"  > Nachricht </label>
-                    <textarea type="text" row="5" name="message" value="{{ $entry->message }}" class="form-control col-md-auto @if ($errors->has('message')) is-invalid @endif " id="message'"></textarea>
+                    <textarea type="text" row="5" name="message" value="{{ $entry->message}}" class="form-control col-md-auto @if ($errors->has('message')) is-invalid @endif " id="message'"></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Reservierung bestätigen</button>
             </form>
