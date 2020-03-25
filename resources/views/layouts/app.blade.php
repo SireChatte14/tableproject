@@ -37,9 +37,11 @@
                           <div class     = "collapse navbar-collapse" id= "navbarNavAltMarkup" >
                               <div class = "navbar-nav" > <a class= "nav-item nav-link active" href= "" > Home <span class = "sr-only" > (current) </span></a>
                                     <a class  = "nav-item nav-link"  href= "MenuCard"> Speisekarte </a>
-                                    <a class  = "nav-item nav-link"  href= "tablebook" > Tischreservierung </a>
-                                     <a class = "nav-item nav-link"  href= "impressum" > Impressum</a>
+                                    <a class = "nav-item nav-link"   href= "impressum" > Impressum</a>
                                     <a class  = "nav-item nav-link"  href= "datenschutz" > Datenschutz </a>
+                                    @can('is-user')
+                                    <a class  = "nav-item nav-link"  href= "tablebook" > Tischreservierung </a>
+                                    @endcan
                                     @can('is-admin')
                                     <a class  = "nav-item nav-link"  href= "adminArea" > Adminbereich </a>
                                     @endcan
@@ -57,8 +59,6 @@
                                             <i class="fa fa-user"></i>
                                              @auth()
                                                 {{ Auth::user()->name }} ({{auth()->user()->role()->pluck('name')->implode(",")}})
-                                             @else
-                                                Gast
                                             @endauth
                                             </a>
                                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

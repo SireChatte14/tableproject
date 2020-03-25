@@ -20,7 +20,7 @@
                             <th> Buchungstag </th>
                             <th> Begin </th>
                             <th> Ende </th>
-                            <th> Email (ja/nein)</th>
+                            <th> Email </th>
                             <th> Telefonnummer</th>
                             <th> Personenanzahl </th>
                             <th> Nachricht</th>
@@ -42,7 +42,7 @@
                             <td>
                                 <form action="{{route('admin.TableBook.destroy',$entry->id)}}" method="post">
                                         <div class="btn-group">
-                                            <button type="submit" class="btn-outline-secondary"><i class="fas fa*4 fa-trash-alt"></i></button>
+                                            <button type="submit" class="btn-outline-secondary"><i class="far fa-envelope"></i></button>
                                             <a class="btn btn-outline-secondary" href="{{route('admin.TableBook.edit',$entry->id)}}"><i class="fas fa*3 fa-edit"></i></a>
                                         </div>
                                         @method('delete')

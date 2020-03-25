@@ -25,6 +25,7 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
         $this->registerAdminPolicies();
+        $this->registerUserPolicies();
         //
     }
 
@@ -35,5 +36,16 @@ class AuthServiceProvider extends ServiceProvider
             return $User ->hasAccess(['is-admin']);
         }
         );
+
+    }
+
+    public function registerUserPolicies()
+    {
+        Gate::define('is-user', function($User)
+        {
+            return $User ->hasAccess(['is-user','is-admin']);
+        }
+        );
+
     }
 }

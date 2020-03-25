@@ -25,7 +25,7 @@
                             @foreach($tables->all() AS $table)
                                  <td>{{$table->tableNumber}}</td>
                                  <td>{{$table->numberOfSeats}}</td>
-                                 <td>{{$table->color}}</td>
+                                 <td><input type="color" value="{{$table->color}}" readonly ></td>
                             <td>
                                 <form action="{{route('admin.TableEdit.destroy',$table->id)}}" method="post">
                                 <div class="btn-group">

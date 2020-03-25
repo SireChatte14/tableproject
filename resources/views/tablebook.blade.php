@@ -39,18 +39,16 @@
                 <input type="radio" name="LengthOfStay" value="180">  180min   <input type="radio" name="LengthOfStay" value="240">   240min <br>
                 <br>
 
-                <div class="custom-control custom-checkbox mb-3">
-                  <input type="checkbox" class="custom-control-input" id="customCheck" name="email" value="ja">
-                  <label class="custom-control-label" for="customCheck"> Ja, ich möchte die Bestätigung per e-Mail erhalten. </label><br>
-                </div>
                   <label> Mit dem Absenden der Reservierung erkläre ich mich mit den Datenschutzrechtlinien einverstanden. </label><br>
+                <br>
+                  <label> Die Reservierung wird Ihnen per mail bestätigt. </label><br>
                 <br>
                   <input type="text" placeholder="Name" name="name" value="{{auth()->user()->name}}" required ><br>
 
                 <br>
                   <input type="text" placeholder="Telefon" name="phone" required ><br>
                 <br>
-                  <input type="email" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="Email" name="mail" value="{{auth()->user()->email}}" required ><br>
+                  <input type="email" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="Email" name="email" value="{{auth()->user()->email}}" required ><br>
                 <br>
                 <textarea name="message"  style="border-radius: 5px; width: 335px ; height : 100px;" placeholder="Nachricht"></textarea><br>
                 <button type ="submit" style="border-radius: 5px; width: 335px ; height : 50px; background-color: green " name="submit"> Reservierung absenden </button><br>

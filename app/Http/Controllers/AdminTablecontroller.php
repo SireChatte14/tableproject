@@ -5,8 +5,13 @@ namespace App\Http\Controllers;
 use App\entry;
 use App\Event;
 use App\Events\confirmationEvent;
+use App\Mail\ConfirmUser;
+use App\Mail\ConfirmUserMail;
+use App\Mail\WelcomeUser;
 use App\table;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AdminTablecontroller extends Controller
 {
@@ -125,11 +130,11 @@ class AdminTablecontroller extends Controller
         entry::where('id',$entry)
             ->delete();
 
-        return redirect(route('admin.TableBook.index'))->withsuccess('Die Reservierung  wurde an den Kalender übergeben');
+        $user = Auth::User();
+        Mail::to('email@email.com')->send(new ConfirmUserMail($user));
+
+        return redirect(route('admin.TableBook.index'))->withsuccess('Die Reservierung  wurde per E-mail dem Kunden bestätigt');
     }
-
-
-
 
     public function loadEntrys(){
 
@@ -138,12 +143,6 @@ class AdminTablecontroller extends Controller
         return response() ->json($entrys);
     }
 
-    public function sendMail(Request $request){
 
-        dd($request);
-
-        Mail::to('email@email.com')->send(new ConfirmUser($user));
-
-    }
 
 }
