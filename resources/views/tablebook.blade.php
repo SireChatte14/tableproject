@@ -50,6 +50,9 @@
                 <br>
                   <input type="email" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="Email" name="email" value="{{auth()->user()->email}}" required ><br>
                 <br>
+                <br>
+                <input type="user_id" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="id" name="user_id" value="{{auth()->user()->id}}" required ><br>
+                <br>
                 <textarea name="message"  style="border-radius: 5px; width: 335px ; height : 100px;" placeholder="Nachricht"></textarea><br>
                 <button type ="submit" style="border-radius: 5px; width: 335px ; height : 50px; background-color: green " name="submit"> Reservierung absenden </button><br>
         </form>

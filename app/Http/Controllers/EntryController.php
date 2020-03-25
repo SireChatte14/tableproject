@@ -31,13 +31,14 @@ class EntryController extends Controller
         $LengthOfStay = $request -> LengthOfStay;
 
         $entry = new Entry;
+        $entry -> user_id                = $request -> user_id;
+        $entry -> name                  = $request -> name;
         $entry-> NumberOfPeople         = $request -> NumberOfPeople;
         $entry -> bookingdate           = $request -> bookingdate;
         $entry -> fromtime              = $this -> changefromTime($frometime);
         $entry-> LengthOfStay           = $request -> LengthOfStay;
         $entry-> endTime                = $this -> changeTime($frometime,$LengthOfStay);
         $entry -> email                 = $request -> email;
-        $entry -> name                  = $request -> name;
         $entry -> phone                 = $request -> phone;
         $entry -> message               = $request -> message;
         $entry->save();
