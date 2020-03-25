@@ -21,15 +21,10 @@
             <form action="{{route('admin.TableBook.store')}}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="FirstName"   > Vorname </label>
-                    <input type="text" name="FirstName" value="{{$entry->FirstName}}" class="form-control @if ($errors->has('title')) is-invalid @endif " id="FirstName" autocomplete="off" required>
+                    <label for="name"   > Name </label>
+                    <input type="text" name="name" value="{{$entry->name}}" class="form-control @if ($errors->has('name')) is-invalid @endif " id="name" autocomplete="off" required>
                     <div class="valid-feedback">Valid.</div>
-                    <div class="invalid-feedback">{{$errors->first('FirstName')}}</div>
-
-                    <label for="SecondName"   > Vorname </label>
-                    <input type="text" name="SecondName" value="{{$entry->SecondName}}" class="form-control @if ($errors->has('SecondName')) is-invalid @endif " id="SecondName" autocomplete="off" required>
-                    <div class="valid-feedback">Valid.</div>
-                    <div class="invalid-feedback">{{$errors->first('SecondName')}}</div>
+                    <div class="invalid-feedback">{{$errors->first('name')}}</div>
 
                     <label for="bookingdate"  > Ab </label>
                     <input type="text" name="bookingdate" value="{{ $entry->bookingdate }}" class="form-control col-md-auto @if ($errors->has('bookingdate')) is-invalid @endif " id="bookingdate" required></input>

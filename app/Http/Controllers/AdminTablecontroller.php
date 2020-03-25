@@ -30,15 +30,14 @@ class AdminTablecontroller extends Controller
      */
     public function store (Request $request)
     {
+
         $frometime = $request -> fromtime;
         $LengthOfStay = $request -> LengthOfStay;
-        $FirstName = $request -> FirstName;
-        $SecondName = $request -> SecondName;
         $bookingdate = $request -> bookingdate;
         $table_id = $request->table_id;
 
         $event = new event;
-        $event -> name                  = ($FirstName.' '.$SecondName);
+        $event -> name                  = $request->name;
         $event -> title                 = ('Tisch'.' '.$table_id);
         $event -> start                 = $this -> changefromTime($bookingdate,$frometime);
         $event-> NumberOfPeople         = $request -> NumberOfPeople;
@@ -139,5 +138,12 @@ class AdminTablecontroller extends Controller
         return response() ->json($entrys);
     }
 
+    public function sendMail(Request $request){
+
+        dd($request);
+
+        Mail::to('email@email.com')->send(new ConfirmUser($user));
+
+    }
 
 }

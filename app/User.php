@@ -59,5 +59,7 @@ class User extends Authenticatable
       return false;
      }
 
-
+    public function entry() {
+        return $this->belongsTo(entry::class);
+    }
 }

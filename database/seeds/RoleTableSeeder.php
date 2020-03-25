@@ -13,7 +13,7 @@ class RoleTableSeeder extends Seeder
     {
         \App\Role::create(
         [
-            'name' => 'Administrator',
+            'name' => 'Admin',
             'description' => 'Gruppe der Admimnstratoren',
             'permissions' => ["is-admin" => true],
             'is_active' => true,
@@ -28,8 +28,19 @@ class RoleTableSeeder extends Seeder
                 'permissions' => ["is-admin" => false],
                 'is_active' => true,
 
-            ],
+            ]
             );
 
+        \App\Role::create(
+            [
+                'name' => 'Employee',
+                'description' => 'Gruppe der angemeldeten Mitrbeiter',
+                'permissions' => ["is-admin" => false],
+                'is_active' => true,
+
+            ]
+        );
+
     }
+
 }

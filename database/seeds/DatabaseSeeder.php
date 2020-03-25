@@ -15,6 +15,7 @@ class DatabaseSeeder extends Seeder
             EventTableSeeder::class,
             RoleTableSeeder::class,
             MenuTableSeeder::class,
+            TablesSeeder::class,
         ]);
 
 

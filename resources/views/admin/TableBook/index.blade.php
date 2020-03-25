@@ -16,12 +16,11 @@
                     <thead>
                         <tr>
                             <th> ID</th>
+                            <th> Name</th>
                             <th> Buchungstag </th>
                             <th> Begin </th>
                             <th> Ende </th>
-                            <th> Email</th>
-                            <th> Vorname</th>
-                            <th> Nachname</th>
+                            <th> Email (ja/nein)</th>
                             <th> Telefonnummer</th>
                             <th> Personenanzahl </th>
                             <th> Nachricht</th>
@@ -31,12 +30,11 @@
                          <tr>
                             @foreach($entrys->all() AS $entry)
                                     <th>{{$entry->id}}</th>
+                                    <td>{{$entry->name}}</td>
                                     <td>{{$entry->bookingdate}}</td>
                                     <td>{{$entry->fromtime}}</td>
                                     <td>{{$entry->endTime}} </td>
                                     <td>{{$entry->email}}</td>
-                                    <td>{{$entry->FirstName}}</td>
-                                    <td>{{$entry->SecondName}}</td>
                                     <td>{{$entry->phone}}</td>
                                     <td>{{$entry->NumberOfPeople}}</td>
                                     <td>{{$entry->message}}</td>

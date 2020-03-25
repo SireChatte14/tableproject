@@ -15,14 +15,13 @@ class CreateEntrysTable extends Migration
     {
         Schema::create('entrys', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
             $table->integer('NumberOfPeople');
             $table->string('bookingdate');
             $table->string('fromtime');
             $table->string('LengthOfStay');
             $table->string('endTime');
             $table->string('email')->nullable();
-            $table->string('FirstName');
-            $table->string('SecondName');
             $table->string('phone');
             $table->text('message')->nullable();
             $table->softDeletes();

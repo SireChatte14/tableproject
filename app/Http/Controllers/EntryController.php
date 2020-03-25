@@ -36,9 +36,8 @@ class EntryController extends Controller
         $entry -> fromtime              = $this -> changefromTime($frometime);
         $entry-> LengthOfStay           = $request -> LengthOfStay;
         $entry-> endTime                = $this -> changeTime($frometime,$LengthOfStay);
-        $entry -> email                  = $request -> email;
-        $entry -> FirstName             = $request -> FirstName;
-        $entry-> SecondName             = $request -> SecondName;
+        $entry -> email                 = $request -> email;
+        $entry -> name                  = $request -> name;
         $entry -> phone                 = $request -> phone;
         $entry -> message               = $request -> message;
         $entry->save();

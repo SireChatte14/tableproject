@@ -45,13 +45,12 @@
                 </div>
                   <label> Mit dem Absenden der Reservierung erkläre ich mich mit den Datenschutzrechtlinien einverstanden. </label><br>
                 <br>
-                  <input type="text" placeholder="Vorname" name="FirstName" required ><br>
-                </br>
-                  <input type="text" placeholder="Nachname" name="SecondName" required ><br>
-                </br>
+                  <input type="text" placeholder="Name" name="name" value="{{auth()->user()->name}}" required ><br>
+
+                <br>
                   <input type="text" placeholder="Telefon" name="phone" required ><br>
                 <br>
-                  <input type="email" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="Email" name="mail" required ><br>
+                  <input type="email" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="Email" name="mail" value="{{auth()->user()->email}}" required ><br>
                 <br>
                 <textarea name="message"  style="border-radius: 5px; width: 335px ; height : 100px;" placeholder="Nachricht"></textarea><br>
                 <button type ="submit" style="border-radius: 5px; width: 335px ; height : 50px; background-color: green " name="submit"> Reservierung absenden </button><br>

@@ -12,6 +12,7 @@
 */
 
 use App\Mail\WelcomeUser;
+use App\Mail\ConfirmUser;
 
 Route::view('/','welcome');
 
@@ -20,7 +21,10 @@ Route::get('/email', function (){
     Mail::to('email@email.com')->send(new WelcomeUser($user));
 });
 
-
+Route::get('/email', function (){
+    $user = Auth::User();
+    Mail::to('email@email.com')->send(new ConfirmUser($user));
+});
 
 // Admin Routes > Middelware "auth"
 

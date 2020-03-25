@@ -11,7 +11,7 @@ class entry extends Model
     protected $table='entrys';
     use SoftDeletes;
     protected $dates = ['deleted_at'];
-    protected $fillable =['NumberOfPeople','bookingdate','fromtime','LengthOfStay','endTime','sms','FirstName','SecondName','phone','message'];
+    protected $fillable =['NumberOfPeople','bookingdate','fromtime','LengthOfStay','endTime','sms','name','phone','message'];
 
 
     public function getStartAttribute($value){
@@ -28,6 +28,10 @@ class entry extends Model
         $timeEnd = Carbon::createFormFormat('Y--m-d H:i:S', $value)->format('Y-m-D');
 
         return $this->End= ($timeEnd == '00:00:00' ? $dateEnd : $value);
+    }
+
+    public function user(){
+        return $this -> hasMany(user::class);
     }
 
 }
