@@ -70,3 +70,7 @@ Route::post('submit','EntryController@save');
 Route::view('adminArea','adminArea');
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

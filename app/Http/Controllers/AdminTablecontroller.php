@@ -131,8 +131,6 @@ class AdminTablecontroller extends Controller
 
         $mail = $data->email;
 
-
-
         entry::where('id',$entry)
             ->delete();
 

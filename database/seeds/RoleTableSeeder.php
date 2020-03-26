@@ -25,7 +25,7 @@ class RoleTableSeeder extends Seeder
             [
                 'name' => 'User',
                 'description' => 'Gruppe der angemeldeten Benutzer',
-                'permissions' => ["is-admin" => false],
+                'permissions' => ["is-user" => true],
                 'is_active' => true,
 
             ]
@@ -35,7 +35,7 @@ class RoleTableSeeder extends Seeder
             [
                 'name' => 'Employee',
                 'description' => 'Gruppe der angemeldeten Mitrbeiter',
-                'permissions' => ["is-admin" => false],
+                'permissions' => ["is-employee" => true],
                 'is_active' => true,
 
             ]

@@ -70,4 +70,10 @@ class EntryController extends Controller
 
         return $start;
     }
+
+    public function entry(entry $entry){
+
+
+
+    }
 }
