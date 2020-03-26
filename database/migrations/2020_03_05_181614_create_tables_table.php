@@ -18,6 +18,7 @@ class CreateTablesTable extends Migration
             $table->integer('tableNumber')->unique();
             $table->integer('numberOfSeats');
             $table->string('color',7);
+            $table->softDeletes();
             $table->timestamps();
         });
     }

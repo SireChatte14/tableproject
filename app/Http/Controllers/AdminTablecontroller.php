@@ -43,6 +43,7 @@ class AdminTablecontroller extends Controller
 
         $event = new event;
         $event -> name                  = $request->name;
+        $event->is_booked               = $request->is_booked;
         $event -> title                 = ('Tisch'.' '.$table_id);
         $event -> start                 = $this -> changefromTime($bookingdate,$frometime);
         $event-> NumberOfPeople         = $request -> NumberOfPeople;
@@ -110,13 +111,17 @@ class AdminTablecontroller extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param $entry
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, $entry)
     {
-        //
+        entry::where('id',$entry)
+            ->update([ 'is_booked'=> $request['is_booked'],
+            ]);
+
+        return redirect(route('admin.MenuEdit.index'))->withsuccess('Das Gericht wurde aktualisiert');
     }
 
     /**

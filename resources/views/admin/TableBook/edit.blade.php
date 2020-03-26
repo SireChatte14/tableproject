@@ -59,6 +59,8 @@
                     <label for="table_id"  > Tisch Nummer</label>
                     <input type="text" name="table_id" value="{{ $entry->table_id }}" class="form-control col-md-auto" id="table_id" required></input>
 
+                    <label for="is_booked"  > gebucht </label>
+                    <input type="text" name="is_booked" value="{{ $entry->is_booked }}" class="form-control col-md-auto" id="is_booked" required></input>
 
                     <label for="message"  > Nachricht </label>
                     <textarea type="text" row="5" name="message" value="{{ $entry->message}}" class="form-control col-md-auto @if ($errors->has('message')) is-invalid @endif " id="message'"></textarea>

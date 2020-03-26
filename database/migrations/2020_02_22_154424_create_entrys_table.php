@@ -16,7 +16,6 @@ class CreateEntrysTable extends Migration
         Schema::create('entrys', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('user_id');
-            $table->boolean('is_booked')->default(false);
             $table->string('name');
             $table->integer('NumberOfPeople');
             $table->string('bookingdate');

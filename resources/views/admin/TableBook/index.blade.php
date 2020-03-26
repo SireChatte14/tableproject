@@ -25,6 +25,7 @@
                             <th> Personenanzahl </th>
                             <th> Nachricht</th>
                             <th> Eingang </th>
+                            <th> Gebucht </th>
                             <th> Optionen </th>
                          </tr>
                          <tr>
@@ -39,11 +40,12 @@
                                     <td>{{$entry->NumberOfPeople}}</td>
                                     <td>{{$entry->message}}</td>
                                     <td>{{$entry->created_at}}</td>
+                                    <td>{{$entry->is_booked}}</td>
                             <td>
                                 <form action="{{route('admin.TableBook.destroy',$entry->id)}}" method="post">
                                         <div class="btn-group">
-                                            <button type="submit" class="btn-outline-secondary"><i class="far fa-envelope"></i></button>
-                                            <a class="btn btn-outline-secondary" href="{{route('admin.TableBook.edit',$entry->id)}}"><i class="fas fa*3 fa-edit"></i></a>
+                                            <button type="submit" class="btn btn-outline-secondary"><i class="fas fa-1x fa-mail-bulk"></i></button>
+                                            <a class="btn btn-outline-secondary" href="{{route('admin.TableBook.edit',$entry->id)}}"><i class="fas fa-1x fa-edit"></i></a>
                                         </div>
                                         @method('delete')
                                         @csrf
