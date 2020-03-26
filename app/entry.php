@@ -34,4 +34,9 @@ class entry extends Model
         return $this -> hasMany(user::class);
     }
 
+    public function confirmations() {
+
+        return $this->morphMany('App\confirmations','confirmable');
+    }
+
 }
