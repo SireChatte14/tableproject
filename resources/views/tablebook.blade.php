@@ -16,7 +16,7 @@
                 @csrf
                 <br>
                 <label> Sie möchten für </label>
-                <input type  ="text" name="NumberOfPeople" placeholder="" required />
+                <input type  ="text" name="NumberOfPeople" placeholder="" style="width: 25px" required />
                 <label> Personen reservieren ? </label><br>
                 <br>
 
@@ -26,7 +26,7 @@
                 <br>
 
                 <label> ab </label>
-                <input  type  ="time" style="border-radius: 5px; width: 150px ; height: 25px " name="fromtime" placeholder="Uhrzeit" required>
+                <input  type  ="time" style="border-radius: 5px; width: 80px ; height: 25px " name="fromtime" placeholder="Uhrzeit" required>
                 <label> Uhr </label><br>
                 <br>
                 <label> Wie lange denken Sie, wollen Sie bleiben ? </label><br>
@@ -43,18 +43,20 @@
                 <br>
                   <label> Die Reservierung wird Ihnen per mail bestätigt. </label><br>
                 <br>
-                  <input type="text" placeholder="Name" name="name" value="{{auth()->user()->name}}" required ><br>
+                  <input type="text" placeholder="Name" name="name" value="{{auth()->user()->name ?? 'Name'}}" required ><br>
 
                 <br>
                   <input type="text" placeholder="Telefon" name="phone" required ><br>
                 <br>
-                  <input type="email" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="Email" name="email" value="{{auth()->user()->email}}" required ><br>
+                  <input type="email" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="Email" name="email" value="{{auth()->user()->email??'email'}}" required ><br>
                 <br>
                 <br>
-                <input type="user_id" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="id" name="user_id" value="{{auth()->user()->id}}" required ><br>
+                <input type="user_id" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="id" name="user_id" value="{{auth()->user()->id??'id'}}" required ><br>
                 <br>
                 <textarea name="message"  style="border-radius: 5px; width: 335px ; height : 100px;" placeholder="Nachricht"></textarea><br>
+                @auth
                 <button type ="submit" style="border-radius: 5px; width: 335px ; height : 50px; background-color: green " name="submit"> Reservierung absenden </button><br>
+                @endauth
         </form>
         <div class               ="col md-4"></div>
       </div>

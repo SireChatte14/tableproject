@@ -132,14 +132,12 @@ class AdminTablecontroller extends Controller
      */
     public function destroy($entry)
     {
-        $data = entry:: where('id',$entry)->first();
 
-        $mail = $data->email;
 
         entry::where('id',$entry)
             ->delete();
 
-        Mail::to($mail)->send(new ConfirmUserMail());
+
 
         return redirect(route('admin.TableBook.index'))->withsuccess('Die Reservierung  wurde per E-mail dem Kunden bestätigt');
     }

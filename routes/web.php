@@ -13,6 +13,7 @@
 
 use App\Mail\WelcomeUser;
 use App\Mail\ConfirmUser;
+use Illuminate\Support\Facades\Route;
 
 Route::view('/','welcome');
 
@@ -37,8 +38,6 @@ Route::prefix('admin')->group (function()
 
         Route::resource('TableBook', 'AdminTablecontroller');
         Route::resource('MenuEdit', 'AdminMenucontroller');
-        Route::resource('Calendar', 'CalendarController');
-        Route::resource('CalendarDay', 'CalendarDayController');
         Route::resource('TableEdit', 'tableSetUpController');
         Route::resource('fullcalendar', 'FullCalendarController');
         Route::get('/load-events','Eventcontroller@loadEvents')->name('routeLoadEvents');
@@ -48,6 +47,14 @@ Route::prefix('admin')->group (function()
 
     });
   });
+});
+
+Route::group(["prefix"=> "confirmation","middleware"=>"auth"],function(){
+
+    Route::name('confirmation.')->group(function(){
+
+    Route::post('entry/{entry}', 'ConfirmationsController@entry')->name('entry');
+});
 });
 
 

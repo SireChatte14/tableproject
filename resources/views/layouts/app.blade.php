@@ -44,9 +44,7 @@
                             <a class  = "nav-item nav-link" href="MenuCard" > Speisekarte  </a>
                             <a class  = "nav-item nav-link" href="impressum" > Impressum </a>
                             <a class  = "nav-item nav-link" href="datenschutz" > Datenschutz</a>
-                            @can('is-user')
                             <a class  = "nav-item nav-link" href="tablebook" > Tischreservierung</a>
-                            @endcan
                             @can('is-admin')
                             <a class  = "nav-item nav-link" href="adminArea" > Adminbereich</a>
                             @endcan
