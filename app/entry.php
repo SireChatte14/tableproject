@@ -38,11 +38,14 @@ class entry extends Model
         return $this -> hasMany(user::class);
     }
 
+
+
     /**
      * Get the post's confirmations.
      */
     public function confirmations()
     {
+
         return $this->morphmany('App\Confirmations', 'confirmable');
 
     }
@@ -62,6 +65,10 @@ class entry extends Model
     {
         $user = ($user !== null) ? $user : auth()-> user();
         return $this->confirmations()->create(["user_id"=>$user->id]);
+    }
+
+    public function Event(){
+        return $this -> hasone(Event::class);
     }
 
 }

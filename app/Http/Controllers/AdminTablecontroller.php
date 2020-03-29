@@ -43,15 +43,22 @@ class AdminTablecontroller extends Controller
 
         $event = new event;
         $event -> name                  = $request->name;
-        $event->is_booked               = $request->is_booked;
+        $event -> is_booked             = 1;
+        $event -> entry_id              = $request -> entry_id;
         $event -> title                 = ('Tisch'.' '.$table_id);
         $event -> start                 = $this -> changefromTime($bookingdate,$frometime);
-        $event-> NumberOfPeople         = $request -> NumberOfPeople;
-        $event-> end                    = $this -> changeTime($bookingdate,$frometime,$LengthOfStay);
-        $event-> color                  = $this ->changeColor($table_id);
+        $event -> NumberOfPeople        = $request -> NumberOfPeople;
+        $event -> end                   = $this -> changeTime($bookingdate,$frometime,$LengthOfStay);
+        $event -> color                 = $this ->changeColor($table_id);
+        $event -> email                 = $request -> email;
         $event -> phone                 = $request -> phone;
         $event -> description           = $request -> message;
-        $event->save();
+        $event -> save();
+
+        $title = ('Tisch'.' '.$table_id);
+        $entry_id =$request->entry_id;
+
+        $this->tableupdate($entry_id,$title);
 
         return redirect(route('admin.fullcalendar.index'));
 
@@ -115,13 +122,11 @@ class AdminTablecontroller extends Controller
      * @param $entry
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $entry)
+    public function tableupdate ($entry_id,$title)
     {
-        entry::where('id',$entry)
-            ->update([ 'is_booked'=> $request['is_booked'],
-            ]);
+        entry::where('id',$entry_id)
+            ->update([ 'tableName'=> ($title)]);
 
-        return redirect(route('admin.MenuEdit.index'))->withsuccess('Das Gericht wurde aktualisiert');
     }
 
     /**
@@ -133,11 +138,8 @@ class AdminTablecontroller extends Controller
     public function destroy($entry)
     {
 
-
-        entry::where('id',$entry)
+        entry::where('id', $entry)
             ->delete();
-
-
 
         return redirect(route('admin.TableBook.index'))->withsuccess('Die Reservierung  wurde per E-mail dem Kunden bestätigt');
     }

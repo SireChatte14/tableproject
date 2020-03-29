@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 name: element.event.extendedProps.name,
                 id: element.event.id,
                 start: start,
+                email: element.event.extendedProps.email,
                 end: end
             };
 
@@ -103,6 +104,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
             let end = moment(element.event.end).format("DD/MM/YYYY HH-mm-ss");
             $("#modalCalendar input[name='end']").val(end);
+
+            let email = element.event.extendedProps.email;
+            $("#modalCalendar input[name='email']").val(email);
 
             let color = element.event.backgroundColor;
             $("#modalCalendar input[name='color']").val(color);

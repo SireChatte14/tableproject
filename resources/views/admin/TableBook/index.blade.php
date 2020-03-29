@@ -23,9 +23,9 @@
                             <th> Email </th>
                             <th> Telefonnummer</th>
                             <th> Personenanzahl </th>
+                            <th> Tisch </th>
                             <th> Nachricht</th>
                             <th> Eingang </th>
-                            <th> Gebucht </th>
                             <th> Optionen </th>
                          </tr>
                          <tr>
@@ -38,9 +38,9 @@
                                     <td>{{$entry->email}}</td>
                                     <td>{{$entry->phone}}</td>
                                     <td>{{$entry->NumberOfPeople}}</td>
+                                    <td>{{$entry->tableName}}</td>
                                     <td>{{$entry->message}}</td>
                                     <td>{{$entry->created_at}}</td>
-                                    <td>{{$entry->is_booked}}</td>
                             <td>
                                 <form action="{{route('confirmation.entry',$entry->id)}}" method="post">
                                     @csrf

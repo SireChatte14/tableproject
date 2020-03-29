@@ -53,9 +53,15 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <label for="color" class="col-sm-4 col-form-label">Tisch</label>
+                        <label for="email" class="col-sm-4 col-form-label">Email</label>
                         <div class="col-sm-8">
-                            <input type="color" name="color" class="form-control" id="color" readonly>
+                            <input type="email" name="email" class="form-control" id="email" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="color"  class="col-sm-4 col-form-label">Tischfarbe</label>
+                        <div class="col-sm-8">
+                            <input type="color" name="color" class="form-control w-25" id="color" readonly>
                         </div>
                     </div>
                     <div class="form-group row">

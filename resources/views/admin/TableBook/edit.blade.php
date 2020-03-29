@@ -21,6 +21,12 @@
             <form action="{{route('admin.TableBook.store')}}" method="POST">
                 @csrf
                 <div class="form-group">
+
+                    <label for="entry_id"   > Reservierungs ID </label>
+                    <input type="text" name="entry_id" value="{{$entry->id}}" class="form-control @if ($errors->has('name')) is-invalid @endif " id="entry_id" autocomplete="off" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">{{$errors->first('entry_id')}}</div>
+
                     <label for="name"   > Name </label>
                     <input type="text" name="name" value="{{$entry->name}}" class="form-control @if ($errors->has('name')) is-invalid @endif " id="name" autocomplete="off" required>
                     <div class="valid-feedback">Valid.</div>
@@ -56,11 +62,13 @@
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">{{$errors->first('phone')}}</div>
 
+                    <label for="email"  > email </label>
+                    <input type="email" name="email" value="{{ $entry->email }}" class="form-control col-md-auto @if ($errors->has('email')) is-invalid @endif " id="email" required></input>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">{{$errors->first('email')}}</div>
+
                     <label for="table_id"  > Tisch Nummer</label>
                     <input type="text" name="table_id" value="{{ $entry->table_id }}" class="form-control col-md-auto" id="table_id" required></input>
-
-                    <label for="is_booked"  > gebucht </label>
-                    <input type="text" name="is_booked" value="{{ $entry->is_booked }}" class="form-control col-md-auto" id="is_booked" required></input>
 
                     <label for="message"  > Nachricht </label>
                     <textarea type="text" row="5" name="message" value="{{ $entry->message}}" class="form-control col-md-auto @if ($errors->has('message')) is-invalid @endif " id="message'"></textarea>

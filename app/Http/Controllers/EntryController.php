@@ -31,7 +31,7 @@ class EntryController extends Controller
         $LengthOfStay = $request -> LengthOfStay;
 
         $entry = new Entry;
-        $entry -> user_id                = $request -> user_id;
+        $entry -> user_id               = $request -> user_id;
         $entry -> name                  = $request -> name;
         $entry-> NumberOfPeople         = $request -> NumberOfPeople;
         $entry -> bookingdate           = $request -> bookingdate;

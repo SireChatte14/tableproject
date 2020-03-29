@@ -12,4 +12,6 @@ class table extends Model
     protected $table='tables';
 
     protected $fillable =['tableNumber','numberOfSeats','color'];
+
+
 }
