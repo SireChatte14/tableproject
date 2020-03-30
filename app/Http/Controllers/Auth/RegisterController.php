@@ -75,8 +75,9 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-
         $user->role()->attach(Role::find(2));
         return $user;
+
+        Mail::to($user->email)->sent(new WelcomeUser());
     }
 }

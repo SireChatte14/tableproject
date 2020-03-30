@@ -15,7 +15,9 @@ use App\Mail\WelcomeUser;
 use App\Mail\ConfirmUser;
 use Illuminate\Support\Facades\Route;
 
-Route::view('/','welcome');
+Route::get('/',function(){
+    return view('welcome');
+});
 
 Route::get('/email', function (){
     $user = Auth::User();

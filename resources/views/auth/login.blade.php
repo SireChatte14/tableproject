@@ -41,10 +41,10 @@
 
                         <div class="form-group row">
                             <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <div class="form-check" >
+                                    <input class="form-check-input " type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
-                                    <label class="form-check-label" for="remember">
+                                    <label class="form-check-label offset-1" for="remember">
                                         {{ __('Remember Me') }}
                                     </label>
                                 </div>
@@ -65,6 +65,9 @@
                             </div>
                         </div>
                     </form>
+                    <div class="text-center pt-3">
+                        <a class="btn btn-secondary" href="{{ route('register') }}">Kostenlos registrieren!</a>
+                    </div>
                 </div>
             </div>
         </div>

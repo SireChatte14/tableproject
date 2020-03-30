@@ -25,17 +25,14 @@
     <!-- Styles -->
     <link href="{{ asset('css/headers.css') }}" rel="stylesheet">
 
-
 </head>
 <header>
-
     <div id="app">
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
             <img src="{{URL::asset('img/Logo.jpg')}}" alt="Logo" style="width:50px;">
             <div class="navbar-dark" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-
                     <button class    = "navbar-toggler" type= "button" data-toggle= "collapse" data-target= "#navbarNavAltMarkup" aria-controls= "navbarNavAltMarkup" aria-expanded= "false" aria-label= "Toggle navigation" >
                         <span class    = "navbar-toggler-icon" ></span>
                     </button>
@@ -45,52 +42,51 @@
                             <a class  = "nav-item nav-link" href="impressum" > Impressum </a>
                             <a class  = "nav-item nav-link" href="datenschutz" > Datenschutz</a>
                             <a class  = "nav-item nav-link" href="tablebook" > Tischreservierung</a>
+                            @guest
+                            <a class  = "nav-item nav-link" href="{{ route('login') }}" >Anmelden</a>
+                            @endguest
+                            @auth()
+                            <a class  = "nav-item nav-link" href="{{ route('logout') }}"
+
+                                        onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                         </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            @endauth
+                            </form>
+
                             @can('is-admin')
                             <a class  = "nav-item nav-link" href="adminArea" > Adminbereich</a>
                             @endcan
+
+                            @auth()
+                                <div class="container mt-1" style="color:darkgray">
+                                    <i class="fa fa-user  mt-1" style="color:darkgray"></i>
+                                    {{ Auth::user()->name }} ({{auth()->user()->role()->pluck('name')->implode(",")}})
+                                </div>
+                            @else
+                                <div style="color:darkgray">
+                                    Gast
+                                </div>
+                            @endauth
+
                         </div>
                     </div>
-
-                    @guest
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @if (Route::has('register'))
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            </li>
-                        @endif
-                    @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                <i class="fa fa-user"></i>
-                                @auth()
-                                    {{ Auth::user()->name }} ({{auth()->user()->role()->pluck('name')->implode(",")}})
-                                @else
-                                    Gast
-                                @endauth
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                    @endguest
                 </ul>
             </div>
         </nav>
 
     </div>
 </header>
-<main class="py-4">
+    <div class="jumbotron bg-secondary ">
+        <div class="container text-center" >
+            <div class="">
+                <h1>Salzburger Stuben</h1>
+            </div>
+        </div>
+    </div>
     @yield('content')
-</main>
+
 
