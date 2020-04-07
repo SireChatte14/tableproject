@@ -43,15 +43,15 @@
                 <br>
                   <label> Die Reservierung wird Ihnen per mail bestätigt. </label><br>
                 <br>
-                  <input type="text" placeholder="Name" name="name" value="{{auth()->user()->name ?? 'Name'}}" required ><br>
+                  <input type="text" placeholder="Name" name="name" value="{{auth()->user()->name ?? 'Name'}}" required readonly><br>
 
                 <br>
-                  <input type="text" placeholder="Telefon" name="phone" required ><br>
+                  <input type="text" placeholder="Telefon" name="phone" value="{{auth()->user()->phone??'phone'}}" required readonly><br>
                 <br>
-                  <input type="email" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="Email" name="email" value="{{auth()->user()->email??'email'}}" required ><br>
+                  <input type="email" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="Email" name="email" value="{{auth()->user()->email??'email'}}" required readonly><br>
                 <br>
                 <br>
-                <input type="user_id" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="id" name="user_id" value="{{auth()->user()->id??'id'}}" required ><br>
+                <input type="user_id" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="id" name="user_id" value="{{auth()->user()->id??'id'}}" required readonly><br>
                 <br>
                 <textarea name="message"  style="border-radius: 5px; width: 335px ; height : 100px;" placeholder="Nachricht"></textarea><br>
                 @auth

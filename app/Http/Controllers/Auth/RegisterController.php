@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Mail\ConfirmUserMail;
 use App\Mail\WelcomeUser;
 use App\Providers\RouteServiceProvider;
 use App\User;
@@ -56,7 +57,9 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'phone' => ['required', 'string', 'max:20'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+
         ]);
     }
 
@@ -72,26 +75,14 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
         ]);
 
-        // email data
-
-        $email_data = array (
-            'name'=>$data['name'],
-            'email'=>$data['email'],
-        );
-
-
         // send email with the template
 
-        Mail::send('WelcomeUser', $email_data,function ($message) use ($email_data)
-        {
-            $message->to($email_data['email'], $email_data['name'])
-                ->subject('Welcome')
-                ->from('ca-behmel@t-online');
-        });
 
+        Mail::to($user->email)->send(new WelcomeUser($user));
 
         $user->role()->attach(Role::find(2));
 
