@@ -7,7 +7,6 @@
             <h1> Gericht bearbeiten </h1>
         </div>
     </div>
-
     <div class                   ="container-fluid">
         <div class                 ="row justify-content-md-center ">
             @if($errors->any())

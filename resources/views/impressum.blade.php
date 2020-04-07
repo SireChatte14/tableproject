@@ -4,7 +4,7 @@
 @section('content')
 
 
-<div class                   ="container-fluid">
+<div class                   ="container-fluid pt-5">
   <div class                 ="row justify-content-md-center">
     <h1> Impressum </h1>
   </div>

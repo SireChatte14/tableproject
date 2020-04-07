@@ -75,9 +75,28 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
+        // email data
+
+        $email_data = array (
+            'name'=>$data['name'],
+            'email'=>$data['email'],
+        );
+
+
+        // send email with the template
+
+        Mail::send('WelcomeUser', $email_data,function ($message) use ($email_data)
+        {
+            $message->to($email_data['email'], $email_data['name'])
+                ->subject('Welcome')
+                ->from('ca-behmel@t-online');
+        });
+
+
         $user->role()->attach(Role::find(2));
+
         return $user;
 
-        Mail::to($user->email)->sent(new WelcomeUser());
+
     }
 }

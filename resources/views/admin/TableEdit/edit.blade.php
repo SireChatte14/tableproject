@@ -3,7 +3,7 @@
 @section('content')
 
     <div class                   ="container-fluid">
-        <div class                 ="row justify-content-md-center">
+        <div class               ="row justify-content-md-center">
             <h1> Tisch bearbeiten </h1>
         </div>
     </div>
@@ -36,7 +36,6 @@
                     <label for="color" > Farbe </label>
                     <input type="color" name="color" value="{{ $table->color }}" class="form-control @if ($errors->has('color')) is-invalid @endif " id="color'" autocomplete="off">
                 </div>
-
 
                 <button type="submit" class="btn btn-primary"> ändern </button>
             </form>

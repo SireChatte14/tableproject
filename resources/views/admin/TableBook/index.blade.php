@@ -1,17 +1,14 @@
 @extends('layouts.header')
 
 @section('content')
-    <div class="container mt-120">
-        <div class="row>">
-            <div class="col-12">
-              @include('partials.messages')
+        <div class="container">
+            <div class="row>">
+                <div class="text-center">
+                    @include('partials.messages')
+                </div>
+            </div>
         </div>
-
-        <div class="col-12 mb-3">
-            <h1> Anfragen bearbeiten </h1>
-        </div>
-
-            <div class="col-12 ">
+            <div class="container-fluid">
                 <table class="table table-striped ">
                     <thead>
                         <tr>
@@ -44,9 +41,11 @@
                             <td>
                                 <form action="{{route('confirmation.entry',$entry->id)}}" method="post">
                                     @csrf
+
                                         <div class="btn-group">
                                             <button type="submit" class="btn btn-outline-secondary"><i class="fas fa-1x fa-mail-bulk"></i></button>
                                             <a class="btn btn-outline-secondary" href="{{route('admin.TableBook.edit',$entry->id)}}"><i class="fas fa-1x fa-edit"></i></a>
+                                            <a class="btn btn-outline-secondary" href=""><i class="fas fa-1x fa-trash"></i></a>
                                         </div>
                                 </form>
                             </td>
@@ -55,9 +54,28 @@
                         @endforeach
                 </table>
             </div>
-        </div>
+        <div class="modal" id="DeleteModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
 
-        </div>
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modal Heading</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    </div>
+
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                        Modal body..
+                    </div>
+
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+
+                </div>
+            </div>
 @endsection
 
 

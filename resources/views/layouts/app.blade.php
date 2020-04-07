@@ -28,7 +28,7 @@
 </head>
 <header>
     <div id="app">
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-0">
             <img src="{{URL::asset('img/Logo.jpg')}}" alt="Logo" style="width:50px;">
             <div class="navbar-dark" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
@@ -62,12 +62,13 @@
                             @endcan
 
                             @auth()
-                                <div class="container mt-1" style="color:darkgray">
+                                <div class="container mt-1" style="color:darkgray" >
                                     <i class="fa fa-user  mt-1" style="color:darkgray"></i>
                                     {{ Auth::user()->name }} ({{auth()->user()->role()->pluck('name')->implode(",")}})
                                 </div>
                             @else
-                                <div style="color:darkgray">
+                                <div class="container mt-1" style="color:darkgray">
+                                    <i class="fa fa-user  mt-1" style="color:darkgray"></i>
                                     Gast
                                 </div>
                             @endauth
@@ -80,13 +81,7 @@
 
     </div>
 </header>
-    <div class="jumbotron bg-secondary ">
-        <div class="container text-center" >
-            <div class="">
-                <h1>Salzburger Stuben</h1>
-            </div>
-        </div>
-    </div>
+
     @yield('content')
 
 

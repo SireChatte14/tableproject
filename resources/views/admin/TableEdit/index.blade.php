@@ -6,12 +6,9 @@
             <div class="col-12">
               @include('partials.messages')
         </div>
-
         <div class="col-12 mb-3">
-            <h1> Tische </h1>
             <a role="button" href="{{route('admin.TableEdit.create')}}" class="btn btn-sm btn-outline-primary my-2"> Tisch hinzufügen </a>
         </div>
-
             <div class="col-12 ">
                 <table class="table table-striped ">
                     <thead>
@@ -44,4 +41,6 @@
         </div>
 
         </div>
+
+
 @endsection

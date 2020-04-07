@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset   ="utf-8">
-    <meta name      = "viewport" content= "width=device-width, initial-scale=1" >
+    <meta name      ="viewport" content= "width=device-width, initial-scale=1" >
     <meta name      ="keywords">
     <meta name      ="author" content="Carsten Behmel">
 
@@ -21,9 +21,8 @@
     <link href="{{ asset('css/headers.css') }}" rel="stylesheet">
 </head>
 <header>
-
     <div id="app">
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-o">
             <img src="{{URL::asset('img/Logo.jpg')}}" alt="Logo" style="width:50px;">
             <div class="navbar-dark" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
