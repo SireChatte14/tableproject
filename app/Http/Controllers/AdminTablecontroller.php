@@ -4,14 +4,9 @@ namespace App\Http\Controllers;
 
 use App\entry;
 use App\Event;
-use App\Events\confirmationEvent;
-use App\Mail\ConfirmUser;
-use App\Mail\ConfirmUserMail;
-use App\Mail\WelcomeUser;
 use App\table;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Mail;
+
 
 class AdminTablecontroller extends Controller
 {
@@ -24,12 +19,26 @@ class AdminTablecontroller extends Controller
      */
     public function index(entry $entrys)
     {
-        return view('admin.TableBook.index',compact('entrys'));
+
+        $count = entry::count();
+
+       if ($count > 0) {
+
+           $entrys = entry::paginate(10);
+
+           return view('admin.TableBook.index',compact('entrys'));
+
+       }else{
+
+           return redirect(route('admin.fullcalendar.index'));
+       }
+
+
     }
 
     /**
      * Store a newly created resource in storage.
-     *
+     *V
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
@@ -141,15 +150,9 @@ class AdminTablecontroller extends Controller
         entry::where('id', $entry)
             ->delete();
 
-        return redirect(route('admin.TableBook.index'))->withsuccess('Die Reservierung  wurde per E-mail dem Kunden bestätigt');
+        return redirect(route('admin.TableBook.index'))->withsuccess('Der Datensatz ist gelöscht');
     }
 
-    public function loadEntrys(){
-
-        $entrys = EntryController:: all();
-
-        return response() ->json($entrys);
-    }
 
 
 
