@@ -38,10 +38,20 @@
                     </button>
                     <div class     = "collapse navbar-collapse" id= "navbarNavAltMarkup" >
                         <div class    = "navbar-nav" > <a class= "nav-item nav-link active" href= "/home" > Home <span class = "sr-only" > (current) </span></a>
-                            <a class  = "nav-item nav-link" href="MenuCard" > Speisekarte  </a>
+                            <div class="btn-group ">
+                                <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
+                                    Speisekarte</button>
+                                <ul class="dropdown-menu" role="menu">
+                                    <li><a href="#">Vorspeise</a></li>
+                                    <li><a href="MenuCard">Hauptgericht</a></li>V
+                                    <li><a href="#">Nachspeise</a></li>
+                                </ul>
+                            </div>
                             <a class  = "nav-item nav-link" href="impressum" > Impressum </a>
                             <a class  = "nav-item nav-link" href="datenschutz" > Datenschutz</a>
+                            @auth()
                             <a class  = "nav-item nav-link" href="tablebook" > Tischreservierung</a>
+                            @endauth
                             @guest
                             <a class  = "nav-item nav-link" href="{{ route('login') }}" >Anmelden</a>
                             @endguest
@@ -50,7 +60,7 @@
 
                                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('Abmelden') }}
                                          </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf

@@ -47,9 +47,7 @@
                 <textarea name="message"  style="border-radius: 5px; width: 335px ; height : 100px;" placeholder="Nachricht"></textarea>
                 <br>
                 <br>
-                @auth
                 <button type ="submit" style="border-radius: 5px; width: 335px ; height : 50px; background-color: green " name="submit"> Reservierung absenden </button><br>
-                @endauth
                 <input type="hidden" style="border-radius: 5px; width: 35px ; height : 25px;" placeholder="id" name="user_id" value="{{auth()->user()->id??'id'}}" required readonly><br>
                 <br>
         </form>

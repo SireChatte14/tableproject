@@ -38,17 +38,27 @@
                                <a class  = "nav-item nav-link" href="{{route('admin.fullcalendar.index')}}" > Reservierungen </a>
                                @auth()
                                    <a class  = "nav-item nav-link" href="{{ route('logout') }}"
+
                                       onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
-                                       {{ __('Logout') }}
+                                       {{ __('Abmelden') }}
                                    </a>
-                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;"></form>
-                                   @csrf
-                                           <div class="container mt-1" style="color:darkgray">
-                                               <i class="fa fa-user  mt-1" style="color:darkgray"></i>
-                                               {{ Auth::user()->name }} ({{auth()->user()->role()->pluck('name')->implode(",")}})
-                                           </div>
-                               @endauth
+                                   <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                       @csrf
+                                       @endauth
+                                   </form>
+
+                                   @auth()
+                                       <div class="container mt-1" style="color:darkgray" >
+                                           <i class="fa fa-user  mt-1" style="color:darkgray"></i>
+                                           {{ Auth::user()->name }} ({{auth()->user()->role()->pluck('name')->implode(",")}})
+                                       </div>
+                                   @else
+                                       <div class="container mt-1" style="color:darkgray">
+                                           <i class="fa fa-user  mt-1" style="color:darkgray"></i>
+                                           Gast
+                                       </div>
+                                   @endauth
                            </div>
                           </div>
                     </ul>
