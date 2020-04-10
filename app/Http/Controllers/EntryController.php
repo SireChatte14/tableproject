@@ -43,7 +43,7 @@ class EntryController extends Controller
         $entry -> message               = $request -> message;
         $entry->save();
 
-        return redirect(route('home'));
+        return redirect(route('home'))->withwarning('Vielen dank für Ihre Reservierung . Sie bekommen per Mail eine Reservierbestättigung');
     }
 
 

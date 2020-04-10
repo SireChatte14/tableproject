@@ -16,6 +16,8 @@ class MenuCardController extends Controller
     {
         // MenuCard aufrufen
 
+        $menus = menu::paginate(4);
+
         return view('MenuCard.index',compact('menus'));
     }
 

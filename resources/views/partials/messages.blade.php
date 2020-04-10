@@ -4,3 +4,6 @@
 @if(Session::get('danger'))
     <p class="alert alert-danger">{{Session::get('danger')}}</p>
 @endif
+@if(Session::get('warning'))
+    <p class="alert alert-warning">{{Session::get('warning')}}</p>
+@endif

@@ -16,7 +16,7 @@ use App\Mail\ConfirmUser;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',function(){
-    return view('welcome');
+    return view('layouts.startpage');
 });
 
 Route::get('/email', function (){

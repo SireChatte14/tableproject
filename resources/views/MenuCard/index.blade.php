@@ -4,7 +4,6 @@
 
     <link href="{{ asset('css/MenuCard.css') }}" rel="stylesheet">
 
-
     @foreach($menus->all() AS $menu)
 
                     <div class="row" >
@@ -31,4 +30,15 @@
 
     @endforeach
 
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+            </div>
+            <div class="col-md-6 ">
+                {{ $menus->links() }}
+            </div>
+            <div class="col-md-3">
+            </div>
+        </div>
+    </div>
 @endsection

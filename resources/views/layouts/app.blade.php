@@ -72,13 +72,11 @@
                                     Gast
                                 </div>
                             @endauth
-
                         </div>
                     </div>
                 </ul>
             </div>
         </nav>
-
     </div>
 </header>
 

@@ -6,12 +6,6 @@
 
 <div class                   ="container-fluid">
   <div class                 ="row justify-content-md-center">
-
-  </div>
-</div>
-<div class                   ="container-fluid">
-  <div class                 ="row justify-content-md-center">
-    <div class               ="col md-4"></div>
       <form class="contact-form" action="submit" method="post">
                 @csrf
                 <br>
@@ -39,9 +33,8 @@
                 <input type="radio" name="LengthOfStay" value="180">  180min   <input type="radio" name="LengthOfStay" value="240">   240min <br>
                 <br>
 
-                  <label> Mit dem Absenden der Reservierung erkläre ich mich mit den Datenschutzrechtlinien einverstanden. </label><br>
-                <br>
-                  <label> Die Reservierung wird Ihnen per mail bestätigt. </label><br>
+                  <label> Mit dem Absenden der Reservierung erkläre ich mich  </label><br>
+                  <label> mit den Datenschutzrechtlinien einverstanden. </label><br>
                 <br>
                   <input type="text" placeholder="Name" name="name" value="{{auth()->user()->name ?? 'Name'}}" required readonly><br>
 
@@ -49,17 +42,17 @@
                   <input type="text" placeholder="Telefon" name="phone" value="{{auth()->user()->phone??'phone'}}" required readonly><br>
                 <br>
                   <input type="email" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="Email" name="email" value="{{auth()->user()->email??'email'}}" required readonly><br>
+
+                <br>
+                <textarea name="message"  style="border-radius: 5px; width: 335px ; height : 100px;" placeholder="Nachricht"></textarea>
                 <br>
                 <br>
-                <input type="user_id" style="border-radius: 5px; width: 335px ; height : 25px;" placeholder="id" name="user_id" value="{{auth()->user()->id??'id'}}" required readonly><br>
-                <br>
-                <textarea name="message"  style="border-radius: 5px; width: 335px ; height : 100px;" placeholder="Nachricht"></textarea><br>
                 @auth
                 <button type ="submit" style="border-radius: 5px; width: 335px ; height : 50px; background-color: green " name="submit"> Reservierung absenden </button><br>
                 @endauth
+                <input type="hidden" style="border-radius: 5px; width: 35px ; height : 25px;" placeholder="id" name="user_id" value="{{auth()->user()->id??'id'}}" required readonly><br>
+                <br>
         </form>
-        <div class               ="col md-4"></div>
-      </div>
     </div>
 
 @endsection
