@@ -11,7 +11,7 @@
         <div class="container container-md mt-md-5">
             <div style="text-align: center">
                 <img class="img-fluid" src="{{URL::asset('img/tisch.jpg')}}" alt="Logo" style="max-width: 100% ; height: auto">
-                    <div id="einblenden">Grüßgott in der Salzburger Stub'n</div>
+                    <div id="einblenden">Grüß Gott in der Salzburger Stub'n</div>
             </div>
         </div>
     </div>

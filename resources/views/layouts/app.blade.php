@@ -43,7 +43,7 @@
                                     Speisekarte</button>
                                 <ul class="dropdown-menu" role="menu">
                                     <li><a href="#">Vorspeise</a></li>
-                                    <li><a href="MenuCard">Hauptgericht</a></li>V
+                                    <li><a href="MenuCard">Hauptgericht</a></li>
                                     <li><a href="#">Nachspeise</a></li>
                                 </ul>
                             </div>
