@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\entry;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class EntryController extends Controller
 {
@@ -43,7 +44,9 @@ class EntryController extends Controller
         $entry -> message               = $request -> message;
         $entry->save();
 
-        return redirect(route('home'))->withwarning('Vielen dank für Ihre Reservierung . Sie bekommen per Mail eine Reservierbestättigung');
+        Alert::info('Vielen dank für Ihre Reservierung. Sie bekommen per Mail eine Reservierbestätigung');
+
+        return redirect(route('home'));
     }
 
 

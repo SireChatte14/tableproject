@@ -7,6 +7,8 @@
               @include('partials.messages')
         </div>
 
+            @include('sweetalert::alert')
+
         <div class="col-12 mb-3">
             <h1> Speisekarte </h1>
             <a role="button" href="{{route('admin.MenuEdit.create')}}" class="btn btn-sm btn-outline-primary my-2">Gericht hinzufügen</a>

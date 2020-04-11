@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use App\menu;
 use App\table;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class tableSetUpController extends Controller
 {
@@ -43,7 +44,9 @@ class tableSetUpController extends Controller
 
         table::create($data);
 
-        return redirect(route('admin.TableEdit.index'))->withsuccess('Der neue Tisch wurde hinzugefügt');
+        Alert::success('Der neue Tisch wurde hinzugefügt');
+
+        return redirect(route('admin.TableEdit.index'));
 
     }
 
@@ -96,7 +99,9 @@ class tableSetUpController extends Controller
                 'color'=> $request['color'],
             ]);
 
-        return redirect(route('admin.TableEdit.index'))->withsuccess('Der Tisch wurde aktualisiert');
+        Alert::success('Der Tisch wurde aktualisiert');
+
+        return redirect(route('admin.TableEdit.index'));
     }
 
     /**
@@ -109,7 +114,9 @@ class tableSetUpController extends Controller
     {
         table::where('id',$table)
             ->delete();
-        return redirect(route('admin.TableEdit.index'))->withdanger('Der Tisch wurde gelöscht');
+        Alert::success('Der Tisch wurde gelöscht');
+
+        return redirect(route('admin.TableEdit.index'));
     }
 
 

@@ -2,7 +2,7 @@
 
 @section('content')
         <div class="container ">
-                @include('partials.messages')
+                @include('sweetalert::alert')
         </div>
         <div class="container-fluid">
                 <table class="table table-striped ">

@@ -11,5 +11,5 @@ class menu extends Model
     protected $table='menus';
     use SoftDeletes;
     protected $dates = ['deleted_at'];
-    protected $fillable =['title','description','price'];
+    protected $fillable =['title','categorieID','description','price'];
 }

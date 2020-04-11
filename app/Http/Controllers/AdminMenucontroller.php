@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\menu;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AdminMenucontroller extends Controller
 {
@@ -38,20 +39,24 @@ class AdminMenucontroller extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $this ->_validate($request);
 
         menu::create($data);
 
-        return redirect(route('admin.MenuEdit.index'))->withsuccess('Das neue Gericht wurde hinzugefügt');
+        Alert::success('Das neue Gericht wurde hinzugefügt');
+
+        return redirect(route('admin.MenuEdit.index'));
 
     }
 
     private function _validate($request) {
 
         $rules = [
-            'title' => 'required|string',
-            'description' => 'required|string',
-            'price'=>'required|string',
+            'title'         =>  'required|string',
+            'categorieID'   =>  'required|string',
+            'description'   =>  'required|string',
+            'price'         =>  'required|string',
         ];
         return $this->validate($request, $rules);
     }
@@ -92,11 +97,14 @@ class AdminMenucontroller extends Controller
 
         menu::where('id',$menu)
         ->update([ 'title'=> $request['title'],
+                   'categorieID'=>$request['categorieID'],
                    'description'=> $request['description'],
                    'price'=> $request['price'],
         ]);
 
-        return redirect(route('admin.MenuEdit.index'))->withsuccess('Das Gericht wurde aktualisiert');
+        Alert::success('Das Gericht wurde aktualisiert');
+
+        return redirect(route('admin.MenuEdit.index'));
     }
 
 
@@ -111,6 +119,8 @@ class AdminMenucontroller extends Controller
     {
         menu::where('id',$menu)
         ->delete();
-        return redirect(route('admin.MenuEdit.index'))->withdanger('Das Gericht wurde gelöscht');
+        Alert::error('Das Gericht wurde gelöscht');
+
+        return redirect(route('admin.MenuEdit.index'));
     }
 }

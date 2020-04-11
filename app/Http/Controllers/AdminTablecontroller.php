@@ -6,6 +6,7 @@ use App\entry;
 use App\Event;
 use App\table;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class AdminTablecontroller extends Controller
@@ -30,10 +31,10 @@ class AdminTablecontroller extends Controller
 
        }else{
 
+           Alert::error('Der Datensatz wurde gelöscht');
+
            return redirect(route('admin.fullcalendar.index'));
        }
-
-
     }
 
     /**
@@ -150,7 +151,8 @@ class AdminTablecontroller extends Controller
         entry::where('id', $entry)
             ->delete();
 
-        return redirect(route('admin.TableBook.index'))->withsuccess('Der Datensatz ist gelöscht');
+        Alert::error('Der Datensatz wurde gelöscht');
+        return redirect(route('admin.TableBook.index'));
     }
 
 

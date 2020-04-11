@@ -4,7 +4,7 @@
     <div class="container mt-120">
         <div class="row>">
             <div class="col-12">
-              @include('partials.messages')
+              @include('sweetalert::alert')
         </div>
         <div class="col-12 mb-3">
             <a role="button" href="{{route('admin.TableEdit.create')}}" class="btn btn-sm btn-outline-primary my-2"> Tisch hinzufügen </a>

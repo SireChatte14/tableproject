@@ -10,15 +10,7 @@
 
 <div class                   ="container-fluid p-4" >
   <div class                 ="row justify-content-md-center ">
-      @if($errors->any())
-          <div class="alert alert-danger" role="alert">
-              <ul>
-                  @foreach($errors->all() as $error)
-                      <li>{{ $error }}</li>
-                  @endforeach
-              </ul>
-          </div>
-      @endif
+   @include('sweetalert::alert')
           <form action="{{route('admin.TableEdit.store')}}" method="post">
             @csrf
             <div class="form-group">

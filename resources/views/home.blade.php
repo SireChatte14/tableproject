@@ -5,7 +5,7 @@
 <body>
 <div class="row>">
     <div class="col-12 text-center">
-        @include('partials.messages')
+        @include('sweetalert::alert')
     </div>
     <div class="container container-md mt-md-5">
         <div>

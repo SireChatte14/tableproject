@@ -13,7 +13,7 @@
 <body>
 
 @include('admin.fullcalendar.modal-calendar')
-
+@include('sweetalert::alert')
 
 <div id='wrap'>
 
