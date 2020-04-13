@@ -36,12 +36,13 @@
                                <a class  = "nav-item nav-link" href="{{route('admin.TableBook.index')}}" > Anfragen  </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" > Tische </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.fullcalendar.index')}}" > Reservierungen </a>
+                               <a class  = "nav-item nav-link" href="{{route('admin.User.index')}}" > User</a>
                                @auth()
                                    <a class  = "nav-item nav-link" href="{{ route('logout') }}"
 
                                       onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
-                                       {{ __('Abmelden') }}
+                                       {{ __('Logout') }}
                                    </a>
                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                        @csrf

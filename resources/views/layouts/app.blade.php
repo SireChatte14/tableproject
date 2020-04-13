@@ -53,14 +53,14 @@
                             <a class  = "nav-item nav-link" href="tablebook" > Tischreservierung</a>
                             @endauth
                             @guest
-                            <a class  = "nav-item nav-link" href="{{ route('login') }}" >Anmelden</a>
+                            <a class  = "nav-item nav-link" href="{{ route('login') }}" >Login</a>
                             @endguest
                             @auth()
                             <a class  = "nav-item nav-link" href="{{ route('logout') }}"
 
                                         onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
-                                        {{ __('Abmelden') }}
+                                        {{ __('Logout') }}
                                          </a>
                             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf

@@ -12,6 +12,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class RegisterController extends Controller
@@ -68,7 +69,7 @@ class RegisterController extends Controller
      *
      * @param array $data
      * @param $user
-     * @return \App\User
+     * @return User
      */
     protected function create(array $data)
     {
@@ -88,6 +89,8 @@ class RegisterController extends Controller
 
         return $user;
 
+        Alert::info('Sie sind jetzt registriert','Bitte Verifizieren Sie sich per Email, die wir Ihnen zugesand haben');
 
+        return redirect(route('admin.Tablebook.index'));
     }
 }

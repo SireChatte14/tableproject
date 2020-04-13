@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'phone','password',
+        'name', 'email', 'phone','password','created_at',
     ];
 
     /**
@@ -39,7 +39,6 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
 
     public function hasRole($role) {
         return User::where('role,$role')->get();
@@ -62,4 +61,5 @@ class User extends Authenticatable
     public function entry() {
         return $this->belongsTo(entry::class);
     }
+
 }
