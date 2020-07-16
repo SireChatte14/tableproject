@@ -17,7 +17,6 @@ class AdminMenucontroller extends Controller
      */
     public function index(menu $menus)
     {
-
         return view('admin.MenuEdit.index',compact('menus'));
     }
 

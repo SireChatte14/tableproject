@@ -67,6 +67,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::view('index','index');
 
+Route::view('speisekarte','speisekarte');
+
 Route::view('impressum','impressum');
 
 Route::view('datenschutz','datenschutz');
@@ -78,8 +80,6 @@ Route::view('tablebook','tablebook');
 Route::post('submit','EntryController@save');
 
 Route::view('adminArea','adminArea');
-
-
 
 Auth::routes();
 

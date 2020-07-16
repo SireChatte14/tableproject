@@ -38,15 +38,8 @@
                     </button>
                     <div class     = "collapse navbar-collapse" id= "navbarNavAltMarkup" >
                         <div class    = "navbar-nav" > <a class= "nav-item nav-link active" href= "/home" > Home <span class = "sr-only" > (current) </span></a>
-                            <div class="btn-group ">
-                                <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown">
-                                    Speisekarte</button>
-                                <ul class="dropdown-menu" role="menu">
-                                    <li><a href="#">Vorspeise</a></li>
-                                    <li><a href="MenuCard">Hauptgericht</a></li>
-                                    <li><a href="#">Nachspeise</a></li>
-                                </ul>
-                            </div>
+
+                            <a class  = "nav-item nav-link" href="MenuCard" > Speisekarte </a>
                             <a class  = "nav-item nav-link" href="impressum" > Impressum </a>
                             <a class  = "nav-item nav-link" href="datenschutz" > Datenschutz</a>
                             @auth()
