@@ -84,3 +84,12 @@ Route::view('adminArea','adminArea');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+/*
+       API Routes
+*/
+
+Route::group(array('prefix' => 'api/v1'), function()
+{
+    Route::resource('pages', 'PagesController', array('only' => array('index', 'store', 'show', 'update', 'destroy')));
+    Route::resource('users', 'UsersController');
+});
