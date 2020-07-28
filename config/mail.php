@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'mailgun'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,8 +56,8 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'carsten.behmel@icloud.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'book@mail.de'),
+        'name' => env('MAIL_FROM_NAME', '${APP_NAME}'),
     ],
 
     /*
@@ -84,9 +84,9 @@ return [
     |
     */
 
-    'username' => env('MAIL_USERNAME'),
+    'username' => env('MAILGUN_DOMAIN'),
 
-    'password' => env('MAIL_PASSWORD'),
+    'password' => env('MAILGUN_SECRET'),
 
     /*
     |--------------------------------------------------------------------------
