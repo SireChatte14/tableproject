@@ -33,6 +33,6 @@ class ConfirmUserMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.ConfirmUser')->with($this->data);
+        return $this->markdown('emails.ReservationConfirmation')->with($this->data);
     }
 }
