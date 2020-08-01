@@ -25,6 +25,7 @@ class confirmationEvent
     public function __construct(confirmations $entry)
     {
         $this->entry = $entry;
+
     }
 
     /**

@@ -9,6 +9,10 @@ class Confirmations extends Model
 
     protected $guarded =[];
     /**
+     * @var mixed
+     */
+
+    /**
      *
      *
      * Get the owning imageable model.

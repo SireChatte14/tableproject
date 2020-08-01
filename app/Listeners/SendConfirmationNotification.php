@@ -40,7 +40,7 @@ class SendConfirmationNotification
 
                 "bookingdate" => $event->entry->related()->bookingdate,
                 "fromtime"=> $event->entry->related()->fromtime,
-                "tableName"=> $event->entry->related()->tableName
+                "tableName"=> $event->entry->related()->tableName,
 
         ]));
     }
