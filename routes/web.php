@@ -19,7 +19,7 @@ Route::get('/',function(){
     return view('welcome');
 });
 
-Route::get('/email', function (){
+Route::post('/email', function (){
     $user = Auth::User();
     Mail::to('email@email.com')->send(new WelcomeUser($user));
 });
