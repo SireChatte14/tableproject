@@ -4,8 +4,10 @@
 
     Vielen Dank für Ihre Reservierung.
 
-    Hiermit bestättigen wir Ihre Reservierung am {{$bookingdate}} um {{$fromtime}}.
-    Reserviert ist {{$tableName}}.
+    Hiermit bestättigen wir Ihre Reservierung am
+    um.
+    Reserviert ist .
+
 
     Beste Grüße,
     Dein {{config('app.name')}}-Team
