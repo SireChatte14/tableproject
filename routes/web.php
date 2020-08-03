@@ -12,7 +12,8 @@
 */
 
 use App\Mail\WelcomeUser;
-use App\Mail\ConfirmUser;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',function(){
@@ -47,7 +48,6 @@ Route::prefix('admin')->group (function()
         Route::put('/event-update','Eventcontroller@update')->name('routeEventUpdate');
         Route::post('/event-store','Eventcontroller@store')->name('routeEventStore');
         Route::delete('/event-delete','Eventcontroller@destroy')->name('routeEventDelete');
-
     });
   });
 });
@@ -94,7 +94,5 @@ Route::group(array('prefix' => 'api/v1'), function()
     Route::resource('users', 'UsersController');
 });
 
-Route::get('/email' , function(){
-    return new \App\Mail\ReservationConfirmation();
-});
+
 
