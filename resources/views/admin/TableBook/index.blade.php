@@ -102,7 +102,7 @@
                         <form>
                             <div class="form-group">
                                 <label for="recipient-name" class="col-form-label">An:</label>
-                                <input type="text" value=" {{$entry->email}} " class="form-control" id="recipient-name">
+                                <input type="text" name="to" value=" {{$entry->email}} " class="form-control" >
                             </div>
                             <div class="form-group">
                                 <label for="message-text" class="col-form-label">Reservierung vom :</label>
@@ -117,13 +117,13 @@
                                 <input type="text" value="{{$entry->NumberOfPeople}}" class="form-control" id="recipient-name">
                             </div>
                             <div class="form-group">
-                                <label for="message-text" class="col-form-label">Tischnummer :</label>
+                                <label for="message-text" name="tablenumber" class="col-form-label">Tischnummer :</label>
                                 <input type="text" value="{{$entry->tableName}}" class="form-control" id="recipient-name">
                             </div>
                         </form>
                     </div>
                     <div class="modal-footer">
-                        <form action="{{route('confirmation.entry',$entry->id)}}" method="post">
+                        <form action="send" method="post">
                             @csrf
                         <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-outline-success">Send message</button>

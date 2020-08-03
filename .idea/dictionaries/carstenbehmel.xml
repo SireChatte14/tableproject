@@ -4,6 +4,7 @@
       <w>buchungstag</w>
       <w>datenschutz</w>
       <w>fillable</w>
+      <w>fromtime</w>
       <w>impressum</w>
       <w>menucontroller</w>
       <w>middelware</w>
@@ -12,6 +13,8 @@
       <w>speisekarte</w>
       <w>tablebook</w>
       <w>tablecontroller</w>
+      <w>tablenumber</w>
+      <w>tableupdate</w>
       <w>tischnummer</w>
     </words>
   </dictionary>

@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\entry;
 use App\Event;
+use App\Mail\ReservationConfirmation;
 use App\table;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -154,8 +156,5 @@ class AdminTablecontroller extends Controller
         Alert::error('Der Datensatz wurde gelöscht');
         return redirect(route('admin.TableBook.index'));
     }
-
-
-
 
 }

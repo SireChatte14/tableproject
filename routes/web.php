@@ -48,6 +48,7 @@ Route::prefix('admin')->group (function()
         Route::put('/event-update','Eventcontroller@update')->name('routeEventUpdate');
         Route::post('/event-store','Eventcontroller@store')->name('routeEventStore');
         Route::delete('/event-delete','Eventcontroller@destroy')->name('routeEventDelete');
+        route::post('send','ReservationController@send');
     });
   });
 });
