@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Event;
 use App\Http\Requests\EventRequest;
+use App\Mail\ReservationConfirmation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class EventController extends Controller
 {
@@ -40,6 +42,14 @@ class EventController extends Controller
         Event::where('id',$request->id)->delete();
 
         return response()->json(true);
+    }
+
+    public function send (Request $request) {
+
+        Mail::to($request->email)->send(New ReservationConfirmation);
+
+        return response()->json(true);
+
     }
 
 }

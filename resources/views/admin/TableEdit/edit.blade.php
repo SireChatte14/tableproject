@@ -21,12 +21,12 @@
                     <div class="invalid-feedback">{{$errors->first('tableNumber')}}</div>
 
                     <label for="numberOfSeats"  > Anzahl Sitzplätze </label>
-                    <input type="text" name="numberOfSeats" value="{{ $table->numberOfSeats }}" class="form-control col-md-auto @if ($errors->has('numberOfSeats')) is-invalid @endif " id="numberOfSeats'" required>
+                    <label for="numberOfSeats'"></label><input type="text" name="numberOfSeats" value="{{ $table->numberOfSeats }}" class="form-control col-md-auto @if ($errors->has('numberOfSeats')) is-invalid @endif " id="numberOfSeats'" required>
                     <div class="valid-feedback">Valid.</div>
                     <div class="invalid-feedback">{{$errors->first('numberOfSeats')}}</div>
 
                     <label for="color" > Farbe </label>
-                    <input type="color" name="color" value="{{ $table->color }}" class="form-control @if ($errors->has('color')) is-invalid @endif " id="color'" autocomplete="off">
+                    <label for="color'"></label><input type="color" name="color" value="{{ $table->color }}" class="form-control @if ($errors->has('color')) is-invalid @endif " id="color'" autocomplete="off">
                 </div>
 
                 <button type="submit" class="btn btn-primary"> ändern </button>

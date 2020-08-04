@@ -1,21 +1,42 @@
 <component name="ProjectDictionaryState">
   <dictionary name="carstenbehmel">
     <words>
+      <w>abbrechen</w>
+      <w>anzahl</w>
+      <w>bearbeiten</w>
+      <w>bookingdate</w>
       <w>buchungstag</w>
+      <w>datensatz</w>
       <w>datenschutz</w>
+      <w>diesen</w>
+      <w>eingang</w>
+      <w>ende</w>
+      <w>eventsend</w>
+      <w>farbe</w>
       <w>fillable</w>
       <w>fromtime</w>
       <w>impressum</w>
+      <w>löschen</w>
       <w>menucontroller</w>
       <w>middelware</w>
+      <w>nachricht</w>
+      <w>optionen</w>
+      <w>personen</w>
+      <w>personenanzahl</w>
       <w>reservierung</w>
       <w>reservierungsbestättigung</w>
+      <w>sitzplätze</w>
       <w>speisekarte</w>
       <w>tablebook</w>
       <w>tablecontroller</w>
       <w>tablenumber</w>
       <w>tableupdate</w>
+      <w>tatsächlich</w>
+      <w>telefonnummer</w>
+      <w>tisch</w>
       <w>tischnummer</w>
+      <w>wollen</w>
+      <w>ändern</w>
     </words>
   </dictionary>
 </component>

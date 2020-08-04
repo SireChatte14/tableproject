@@ -67,7 +67,7 @@
                     <div class="form-group row">
                         <label for="description" class="col-sm-4 col-form-label">Bemerkung</label>
                         <div class="col-sm-8">
-                            <textarea name="description" id="description" cols="30" rows="4" readonly></textarea>
+                            <textarea name="description" id="description" cols="30" rows="4" ></textarea>
                         </div>
                     </div>
                 </form>
@@ -75,8 +75,9 @@
 
             <!-- Modal footer -->
             <div class="modal-footer">
-                <button type="button" class="btn btn-danger deleteEvent">Delete</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-outline-success sendConfirmation">Send Confirmation</button>
+                <button type="button" class="btn btn-outline-danger deleteEvent">Delete</button>
+                <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
             </div>
 
         </div>

@@ -8,6 +8,22 @@ $(function () {
         }
     });
 
+    $(".sendConfirmation").click(function () {
+
+        let id = $("#modalCalendar input[name='id']").val();
+        let email= $("#modalCalendar input[name='email']").val();
+
+        let Event = {
+            id: id,
+            email: email,
+
+            _method:'POST'
+        };
+
+        let route = routeEvents('routeEventSend');
+
+        sendEvent(route,Event);
+    });
 
     $(".deleteEvent").click(function () {
 
@@ -39,7 +55,7 @@ $(function () {
 
         let end = moment($("#modalCalendar input[name='end']").val(),"DD/MM/YYYY HH-mm-ss").format("YYYY-MM-DD HH:mm:ss");
 
-        let email = $("#modalCalendar input[name='email']").val(email);
+        let email = $("#modalCalendar input[name='email']").val();
 
         let color = $("#modalCalendar input[name='color']").val();
 
@@ -84,7 +100,7 @@ function sendEvent(route,data_){
         },
         error:function (json) {
 
-            let responseJSON = json.responseJSON.errors;
+            let responseJSON = json.errors;
 
             $("#message").html(loadErrors(responseJSON));
         }
