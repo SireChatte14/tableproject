@@ -1,44 +1,56 @@
-
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-    <title> Startpage </title>
-
-    <link rel       ="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
-    <link rel       ="stylesheet" href="https://cdnjs.cloudflare.com/ajax/lbs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <script src="https://ayax.googleapis.com/ayax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="main.css">
-
-</head>
-
-<body>
-    <nav class="navbar navbar-default navabar-fixed-top " role="navigation">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+<div id="app">
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-0">
+        <img src="{{URL::asset('img/Logo.jpg')}}" alt="Logo" style="width:50px;">
+        <div class="navbar-dark" id="navbarSupportedContent">
+            <!-- Left Side Of Navbar -->
+            <ul class="navbar-nav mr-auto">
+                <button class    = "navbar-toggler" type= "button" data-toggle= "collapse" data-target= "#navbarNavAltMarkup" aria-controls= "navbarNavAltMarkup" aria-expanded= "false" aria-label= "Toggle navigation" >
+                    <span class    = "navbar-toggler-icon" ></span>
                 </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse-main">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a class="active" href="/home">Home</a></li>
-                    <li><a href="MenuCard" >Speisekarte</a></li>
-                    <li><a href="impressum">Impressum</a></li>
-                    <li><a href="datenschutz">Datenschutz</a></li>
-                    <li><a href="tablebook">Reservierung</a></li>
-                </ul>
-            </div>
+                <div class     = "collapse navbar-collapse" id= "navbarNavAltMarkup" >
+                    <div class    = "navbar-nav" > <a class= "nav-item nav-link active" href= "/home" > Home <span class = "sr-only" > (current) </span></a>
+
+                        <a class  = "nav-item nav-link" href="MenuCard" > Speisekarte </a>
+                        <a class  = "nav-item nav-link" href="impressum" > Impressum </a>
+                        <a class  = "nav-item nav-link" href="datenschutz" > Datenschutz</a>
+                        @auth()
+                            <a class  = "nav-item nav-link" href="tablebook" > Tischreservierung</a>
+                        @endauth
+                        @guest
+                            <a class  = "nav-item nav-link" href="{{ route('login') }}" >Login</a>
+                        @endguest
+                        @auth()
+                            <a class  = "nav-item nav-link" href="{{ route('logout') }}"
+
+                               onclick="event.preventDefault();
+                                        document.getElementById('logout-form').submit();">
+                                {{ __('Logout') }}
+                            </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                                @endauth
+                            </form>
+
+                            @can('is-admin')
+                                <a class  = "nav-item nav-link" href="adminArea" > Adminbereich</a>
+                            @endcan
+
+                            @auth()
+                                <div class="container mt-1" style="color:darkgray" >
+                                    <i class="fa fa-user  mt-1" style="color:darkgray"></i>
+                                    {{ Auth::user()->name }} ({{auth()->user()->role()->pluck('name')->implode(",")}})
+                                </div>
+                            @else
+                                <div class="container mt-1" style="color:darkgray">
+                                    <i class="fa fa-user  mt-1" style="color:darkgray"></i>
+                                    Gast
+                                </div>
+                            @endauth
+                    </div>
+                </div>
+            </ul>
         </div>
     </nav>
-</body>
+</div>
 
 
