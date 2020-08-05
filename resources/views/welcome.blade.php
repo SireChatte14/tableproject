@@ -6,12 +6,11 @@
     <body>
     <div class="row>">
         <div class="col-12 text-center">
-            @include('partials.messages')
+            @include('sweetalert::alert')
         </div>
         <div class="container container-md mt-md-5">
-            <div style="text-align: center">
+            <div>
                 <img class="img-fluid" src="{{URL::asset('img/tisch.jpg')}}" alt="Logo" style="max-width: 100% ; height: auto">
-                    <div id="einblenden">Grüß Gott in der Salzburger Stub'n</div>
             </div>
         </div>
     </div>

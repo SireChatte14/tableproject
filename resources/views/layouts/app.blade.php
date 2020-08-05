@@ -30,6 +30,7 @@
     <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-dark p-4">
+                <a class= "nav-item nav-link active" href= "/home" > Home <span class = "sr-only" > (current) </span></a>
                 <a class  = "nav-item nav-link" href="MenuCard" > Speisekarte </a>
                 <a class  = "nav-item nav-link" href="impressum" > Impressum </a>
                 <a class  = "nav-item nav-link" href="datenschutz" > Datenschutz</a>

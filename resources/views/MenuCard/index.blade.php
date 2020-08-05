@@ -4,41 +4,23 @@
 
     <link href="{{ asset('css/MenuCard.css') }}" rel="stylesheet">
 
-    @foreach($menus->all() AS $menu)
-
-                    <div class="row" >
-                        <div class="col-md-2" ></div>
-
-
-                        <div class="col-md-8">
-                            <div class="menucard">
-                                 <br>
-                                 <p>{{$menu->title}}</p>
-                                <br>
-                                 <p>{{$menu->description}}</p>
-                                 <br>
-                                 <p>{{$menu->price}}</p>
-                                 <br>
-                                 <spann>----------------------------------------------------</spann>
-                                 <br>
-                            </div>
-                        </div>
-
-                        <div class="col-md-2"></div>
-                    </div>
-
-
-    @endforeach
-
     <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-            </div>
-            <div class="col-md-6 ">
-                {{ $menus->links() }}
-            </div>
-            <div class="col-md-3">
-            </div>
-        </div>
+        <table class="table table-striped ">
+            <thead>
+                <tr>
+                    <th> Gericht</th>
+                    <th> Beschreibung</th>
+                    <th> Preis</th>
+                </tr>
+                <tr>
+                    @foreach($menus->all() AS $menu)
+                        <th>{{$menu->title}}</th>
+                        <td>{{$menu->description}}</td>
+                        <td>{{$menu->price}}</td>
+                </tr>
+            </thead>
+            @endforeach
+        </table>
     </div>
+
 @endsection
