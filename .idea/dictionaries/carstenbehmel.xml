@@ -2,8 +2,10 @@
   <dictionary name="carstenbehmel">
     <words>
       <w>abbrechen</w>
+      <w>anfragen</w>
       <w>anzahl</w>
       <w>bearbeiten</w>
+      <w>behmel</w>
       <w>bookingdate</w>
       <w>buchungstag</w>
       <w>datensatz</w>
@@ -15,6 +17,8 @@
       <w>farbe</w>
       <w>fillable</w>
       <w>fromtime</w>
+      <w>gast</w>
+      <w>gstatic</w>
       <w>impressum</w>
       <w>löschen</w>
       <w>menucontroller</w>
@@ -24,7 +28,9 @@
       <w>personen</w>
       <w>personenanzahl</w>
       <w>reservierung</w>
+      <w>reservierungen</w>
       <w>reservierungsbestättigung</w>
+      <w>salzbuger</w>
       <w>sitzplätze</w>
       <w>speisekarte</w>
       <w>tablebook</w>
@@ -34,7 +40,10 @@
       <w>tatsächlich</w>
       <w>telefonnummer</w>
       <w>tisch</w>
+      <w>tischbestellung</w>
+      <w>tische</w>
       <w>tischnummer</w>
+      <w>toggler</w>
       <w>wollen</w>
       <w>ändern</w>
     </words>

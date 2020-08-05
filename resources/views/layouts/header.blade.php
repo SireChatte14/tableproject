@@ -22,16 +22,10 @@
 </head>
 <header>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-o">
-            <img src="{{URL::asset('img/Logo.jpg')}}" alt="Logo" style="width:50px;">
-            <div class="navbar-dark" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        <button class    = "navbar-toggler" type= "button" data-toggle= "collapse" data-target= "#navbarNavAltMarkup" aria-controls= "navbarNavAltMarkup" aria-expanded= "false" aria-label= "Toggle navigation" >
-                          <span class    = "navbar-toggler-icon" ></span>
-                        </button>
-                          <div class     = "collapse navbar-collapse" id= "navbarNavAltMarkup" >
-                           <div class    = "navbar-nav" > <a class= "nav-item nav-link active" href= "/home" > Home <span class = "sr-only" > (current) </span></a>
+            <div class="pos-f-t">
+                <div class="collapse" id="navbarToggleExternalContent">
+                    <div class="bg-dark p-4">
+                               <a class= "nav-item nav-link active" href= "/home" > Home <span class = "sr-only" > (current) </span></a>
                                <a class  = "nav-item nav-link" href="{{route('admin.MenuEdit.index')}}" > Speisekarte </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableBook.index')}}" > Anfragen  </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" > Tische </a>
@@ -62,12 +56,15 @@
                                    @endauth
                            </div>
                           </div>
-                    </ul>
-                </div>
-        </nav>
+                <nav class="navbar navbar-dark bg-dark">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </nav>
+            </div>
     </div>
-</header>
 <main class="py-4">
     @yield('content')
 </main>
 
+</header>
