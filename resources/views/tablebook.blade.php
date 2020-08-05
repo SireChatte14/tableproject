@@ -7,9 +7,9 @@
 <div class ="container-fluid">
     <div class="container">
         <div class="row">
-            <div class="col-4">
+            <div class="col-sm-4">
             </div>
-               <div class="col-4 ">
+               <div class="col-sm-4 ">
                     <form class="contact-form" action="submit" method="post">
                         @csrf
                         <br>
@@ -56,7 +56,7 @@
                         <br>
                     </form>
                 </div>
-            <div class="col-4">
+            <div class="col-sm-4">
             </div>
     </div>
 </div>
