@@ -15,6 +15,8 @@
                             <img class="img-fluid" src="{{URL::asset('img/tisch.jpg')}}" alt="Logo" style="max-width: 100% ; height: auto">
                         </div>
                         <div class="text-md-center  mt-3 " >
+                            <p style="font-size: 45px;font-family:SansSerif, cursive">Welcome</p>
+                            <br>
                             <p style="font-size: 45px;font-family:SansSerif, cursive">Salzbuger Stub`n</p>
                             <br>
                             <p style="font-size: 25px;font-family:SansSerif, cursive">Online Tischbestellung</p>
