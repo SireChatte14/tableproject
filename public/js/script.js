@@ -12,11 +12,14 @@ $(function () {
 
         let id = $("#modalCalendar input[name='id']").val();
         let email= $("#modalCalendar input[name='email']").val();
+        let start= $("#modalCalendar input[name='start']").val();
+        let title= $("#modalCalendar input[name='title']").val();
 
         let Event = {
             id: id,
             email: email,
-
+            start: start,
+            title: title,
             _method:'POST'
         };
 

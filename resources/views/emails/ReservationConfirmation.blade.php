@@ -4,8 +4,8 @@
 
     Vielen Dank für Ihre Reservierung.
 
-    Hiermit bestättigen wir Ihre Reservierung am  um .
-    Reserviert ist.
+    Hiermit bestättigen wir Ihre Reservierung.
+
 
     Beste Grüße,
     Dein {{config('app.name')}}-Team
