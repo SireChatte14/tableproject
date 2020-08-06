@@ -56,8 +56,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         eventDrop: function (element) {
 
-            let start = moment(element.event.start).format("YYYY-MM-DD HH-mm-ss");
-            let end = moment(element.event.end).format("YYYY-MM-DD HH-mm-ss");
+            let start = moment(element.event.start).format("YYYY-MM-DD HH-mm");
+            let end = moment(element.event.end).format("YYYY-MM-DD HH-mm");
 
             let newEvent = {
                 _method:'PUT',
@@ -99,10 +99,10 @@ document.addEventListener('DOMContentLoaded', function() {
             let name = element.event.extendedProps.name;
             $("#modalCalendar input[name='name']").val(name);
 
-            let start = moment(element.event.start).format("DD/MM/YYYY HH-mm-ss");
+            let start = moment(element.event.start).format("DD/MM/YYYY HH-mm");
             $("#modalCalendar input[name='start']").val(start);
 
-            let end = moment(element.event.end).format("DD/MM/YYYY HH-mm-ss");
+            let end = moment(element.event.end).format("DD/MM/YYYY HH-mm");
             $("#modalCalendar input[name='end']").val(end);
 
             let email = element.event.extendedProps.email;
@@ -119,8 +119,8 @@ document.addEventListener('DOMContentLoaded', function() {
         },
 
         eventResize: function (element) {
-            let start = moment(element.event.start).format("YYYY-MM-DD HH-mm-ss");
-            let end = moment(element.event.end).format("YYYY-MM-DD HH-mm-ss");
+            let start = moment(element.event.start).format("YYYY-MM-DD HH-mm");
+            let end = moment(element.event.end).format("YYYY-MM-DD HH-mm");
 
             let newEvent = {
                 _method:'PUT',
@@ -141,10 +141,10 @@ document.addEventListener('DOMContentLoaded', function() {
             $("#modalCalendar #titleModal").text('Neue Reservierung');
             $("#modalCalendar button.deleteEvent").css("display","none");
 
-            let start = moment(element.start).format("DD/MM/YYYY HH-mm-ss");
+            let start = moment(element.start).format("DD/MM/YYYY HH-mm");
             $("#modalCalendar input[name='start']").val(start);
 
-            let end = moment(element.end).format("DD/MM/YYYY HH-mm-ss");
+            let end = moment(element.end).format("DD/MM/YYYY HH-mm");
             $("#modalCalendar input[name='end']").val(end);
 
             let color = element.backgroundColor;
