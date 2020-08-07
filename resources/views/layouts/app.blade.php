@@ -41,12 +41,12 @@
                     <a class  = "nav-item nav-link" href="{{ route('login') }}" style="font-size: 20px;font-family:SansSerif, cursive">Login</a>
                 @endguest
                 @auth()
-                    <a class  = "nav-item nav-link" href="{{ route('logout') }} "
+                    <a class  = "nav-item nav-link" href="{{ route('logout') }} "style="font-size: 20px;font-family:SansSerif, cursive"
 
                        onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
-                        style="font-size: 20px;font-family:SansSerif, cursive"</a>
+                        </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                         @endauth
