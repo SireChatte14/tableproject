@@ -53,7 +53,7 @@
                     </form>
 
                     @can('is-admin')
-                        <a class  = "nav-item nav-link" href="adminArea" > Adminbereich</a>
+                        <a class  = "nav-item nav-link ;" href="adminArea" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Adminbereich</a>
                     @endcan
 
                     @auth()
