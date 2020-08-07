@@ -3,7 +3,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset   ="utf-8">
-    <meta name      = "viewport" content= "width=device-width, initial-scale=1" >
+    <meta name      ="viewport" content= "width=device-width, initial-scale=1" >
     <meta name      ="keywords">
     <meta name      ="author" content="Carsten Behmel">
 
@@ -30,23 +30,23 @@
     <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-dark p-4">
-                <a class= "nav-item nav-link active" href= "/home" > Home <span class = "sr-only" > (current) </span></a>
-                <a class  = "nav-item nav-link" href="MenuCard" > Speisekarte </a>
-                <a class  = "nav-item nav-link" href="impressum" > Impressum </a>
-                <a class  = "nav-item nav-link" href="datenschutz" > Datenschutz</a>
+                <a class= "nav-item nav-link active" href= "/home" style="font-size: 20px;font-family:SansSerif, cursive"> Home <span class = "sr-only" > (current) </span></a>
+                <a class  = "nav-item nav-link" href="MenuCard" style="font-size: 20px;font-family:SansSerif, cursive"> Speisekarte </a>
+                <a class  = "nav-item nav-link" href="impressum" style="font-size: 20px;font-family:SansSerif, cursive"> Impressum </a>
+                <a class  = "nav-item nav-link" href="datenschutz" style="font-size: 20px;font-family:SansSerif, cursive"> Datenschutz</a>
                 @auth()
-                    <a class  = "nav-item nav-link" href="tablebook" > Tischreservierung</a>
+                    <a class  = "nav-item nav-link" href="tablebook" style="font-size: 20px;font-family:SansSerif, cursive"> Tischreservierung</a>
                 @endauth
                 @guest
-                    <a class  = "nav-item nav-link" href="{{ route('login') }}" >Login</a>
+                    <a class  = "nav-item nav-link" href="{{ route('login') }}" style="font-size: 20px;font-family:SansSerif, cursive">Login</a>
                 @endguest
                 @auth()
-                    <a class  = "nav-item nav-link" href="{{ route('logout') }}"
+                    <a class  = "nav-item nav-link" href="{{ route('logout') }} "
 
                        onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
-                    </a>
+                        style="font-size: 20px;font-family:SansSerif, cursive"</a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                         @endauth
