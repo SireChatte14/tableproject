@@ -26,7 +26,7 @@
                 <div class="collapse" id="navbarToggleExternalContent">
                     <div class="bg-dark p-4">
                                <a class= "nav-item nav-link active" href= "/home" > Home <span class = "sr-only" > (current) </span></a>
-                               <a class  = "nav-item nav-link" href="{{route('admin.MenuEdit.index')}}" > Speisekarte </a>
+                               <a class  = "nav-item nav-link " href="{{route('admin.MenuEdit.index')}}" > Speisekarte </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableBook.index')}}" > Anfragen  </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" > Tische </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.fullcalendar.index')}}" > Reservierungen </a>

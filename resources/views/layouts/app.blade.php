@@ -30,24 +30,24 @@
     <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-dark p-4">
-                <a class= "nav-item nav-link active" href= "/home" style="font-size: 20px;font-family:SansSerif, cursive"> Home <span class = "sr-only" > (current) </span></a>
-                <a class  = "nav-item nav-link" href="MenuCard" style="font-size: 20px;font-family:SansSerif, cursive"> Speisekarte </a>
-                <a class  = "nav-item nav-link" href="impressum" style="font-size: 20px;font-family:SansSerif, cursive"> Impressum </a>
-                <a class  = "nav-item nav-link" href="datenschutz" style="font-size: 20px;font-family:SansSerif, cursive"> Datenschutz</a>
+                <a class= "nav-item nav-link active" href= "/home" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Home <span class = "sr-only" > (current) </span></a>
+                <a class  = "nav-item nav-link" href="MenuCard" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Speisekarte </a>
+                <a class  = "nav-item nav-link" href="impressum" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Impressum </a>
+                <a class  = "nav-item nav-link" href="datenschutz" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Datenschutz</a>
                 @auth()
-                    <a class  = "nav-item nav-link" href="tablebook" style="font-size: 20px;font-family:SansSerif, cursive"> Tischreservierung</a>
+                    <a class  = "nav-item nav-link" href="tablebook" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Tischreservierung</a>
                 @endauth
                 @guest
-                    <a class  = "nav-item nav-link" href="{{ route('login') }}" style="font-size: 20px;font-family:SansSerif, cursive">Login</a>
+                    <a class  = "nav-item nav-link" href="{{ route('login') }}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod ">Login</a>
                 @endguest
                 @auth()
-                    <a class  = "nav-item nav-link" href="{{ route('logout') }} "style="font-size: 20px;font-family:SansSerif, cursive"
+                    <a class  = "nav-item nav-link" href="{{ route('logout') }} "style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "
 
                        onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
                         {{ __('Logout') }}
                         </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;;color: palegoldenrod ">
                         @csrf
                         @endauth
                     </form>
@@ -62,8 +62,8 @@
                             {{ Auth::user()->name }} ({{auth()->user()->role()->pluck('name')->implode(",")}})
                         </div>
                     @else
-                        <div class="container mt-1" style="color:darkgray">
-                            <i class="fa fa-user  mt-1" style="color:darkgray"></i>
+                        <div class="container mt-1" style="color:palegoldenrod">
+                            <i class="fa fa-user  mt-1" style="color:palegoldenrod"></i>
                             Gast
                         </div>
                     @endauth
