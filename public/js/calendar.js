@@ -48,16 +48,20 @@ document.addEventListener('DOMContentLoaded', function() {
         editable: true,
         droppable: true, // this allows things to be dropped onto the calendar
         drop: function(element) {
+
+            let Event = JSON.parse(element.draggedEL.dataset.event);
             // is the "remove after drop" checkbox checked?
             if (document.getElementById('drop-remove').checked) {
                 // if so, remove the element from the "Draggable Events" list
                 element.draggedEl.parentNode.removeChild(element.draggedEl);
             }
-        },
-        eventDrop: function (element) {
 
             let start = moment(element.event.start).format("YYYY-MM-DD HH-mm-ss");
             let end = moment(element.event.end).format("YYYY-MM-DD HH-mm-ss");
+        },
+        eventDrop: function (element) {
+
+
 
             let newEvent = {
                 _method:'PUT',
