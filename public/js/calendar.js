@@ -153,11 +153,11 @@ document.addEventListener('DOMContentLoaded', function() {
             calendar.unselect();
         },
 
-        events: routeEvents('routeLoadEvents'),
+        events: routeEvents(),
     });
     calendar.render();
 });
 
-
+console.log(routeEvents('routeLoadEvents'));
 
 
