@@ -1,13 +1,13 @@
 
 
 document.addEventListener('DOMContentLoaded', function() {
-    var Calendar = FullCalendar.Calendar;
-    var Draggable = FullCalendarInteraction.Draggable;
+    let Calendar = FullCalendar.Calendar;
+    let Draggable = FullCalendarInteraction.Draggable;
 
     /* initialize the external events
     -----------------------------------------------------------------*/
 
-    var containerEl = document.getElementById('external-events-list');
+    let containerEl = document.getElementById('external-events-list');
     new Draggable(containerEl, {
         itemSelector: '.fc-event',
         eventData: function(eventEl) {
@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
     /* initialize the calendar
     -----------------------------------------------------------------*/
 
-    var calendarEl = document.getElementById('calendar');
-    var calendar = new Calendar(calendarEl, {
+    let calendarEl = document.getElementById('calendar');
+    let calendar = new Calendar(calendarEl, {
         plugins: [ 'interaction', 'dayGrid', 'timeGrid', 'list' ],
         header: {
             left: 'prev,next today',
@@ -47,21 +47,24 @@ document.addEventListener('DOMContentLoaded', function() {
         selectable: true,
         editable: true,
         droppable: true, // this allows things to be dropped onto the calendar
-        drop: function(element) {
 
-            let Event = JSON.parse(element.draggedEL.dataset.event);
+        eventdrop: function(element) {
+
             // is the "remove after drop" checkbox checked?
             if (document.getElementById('drop-remove').checked) {
                 // if so, remove the element from the "Draggable Events" list
                 element.draggedEl.parentNode.removeChild(element.draggedEl);
             }
+            let start = moment(element.event.start).format("YYYY-MM-DD HH-mm-ss");
+            let end = moment(element.event.end).format("YYYY-MM-DD HH-mm-ss");
+
+        },
+
+
+        eventDrop: function (element) {
 
             let start = moment(element.event.start).format("YYYY-MM-DD HH-mm-ss");
             let end = moment(element.event.end).format("YYYY-MM-DD HH-mm-ss");
-        },
-        eventDrop: function (element) {
-
-
 
             let newEvent = {
                 _method:'PUT',

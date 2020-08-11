@@ -3,20 +3,15 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Confirmations extends Model
 {
 
     protected $guarded =[];
-    /**
-     * @var mixed
-     */
 
-    /**
-     *
-     *
-     * Get the owning imageable model.
-     */
+    use SoftDeletes;
+
     public function confirmable()
     {
         return $this->morphTo();
