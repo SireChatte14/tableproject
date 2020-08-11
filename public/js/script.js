@@ -58,6 +58,8 @@ $(function () {
 
         let end = moment($("#modalCalendar input[name='end']").val(),"DD/MM/YYYY HH-mm-ss").format("YYYY-MM-DD HH:mm:ss");
 
+        let phone = $("#modalCalendar input[name='phone']").val();
+
         let email = $("#modalCalendar input[name='email']").val();
 
         let color = $("#modalCalendar input[name='color']").val();
@@ -73,6 +75,7 @@ $(function () {
             end: end,
             color: color,
             email: email,
+            phone : phone,
             description: description,
             };
 

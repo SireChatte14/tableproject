@@ -90,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
             $("#modalCalendar").modal('show');
             $("#modalCalendar #titleModal").text('Reservierung');
             $("#modalCalendar button.deleteEvent").css("display","flex");
+            $("#modalCalendar button.saveEvent").css("display","none");
 
             let id = element.event.id;
             $("#modalCalendar input[name='id']").val(id);
@@ -124,6 +125,8 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(element);
 
         },
+
+
 
         eventResize: function (element) {
             let start = moment(element.event.start).format("YYYY-MM-DD HH-mm-ss");
