@@ -64,8 +64,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 
-<script src = "https://unpkg.com/@popperjs/core@^2.0.0 "> </script>
-
 <script src="{{ asset('js/script.js') }}" ></script>
 
 <script src="{{ asset('js/calendar.js') }}" ></script>
