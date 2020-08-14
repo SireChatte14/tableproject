@@ -11,6 +11,9 @@ class Event extends Model
     use SoftDeletes;
 
     protected $fillable=['entry_id','name','title','start','NumberOfPeople','end','color','phone','description'];
+    /**
+     * @var mixed
+     */
 
     public function getStartAttribut($value) {
 
