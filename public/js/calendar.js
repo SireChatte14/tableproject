@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
         },
         locale: 'de',
+        timezone: 'UTC',
         navLinks: true,
         eventLimit:true,
         selectable: true,

@@ -49,8 +49,6 @@ class EntryController extends Controller
         return redirect(route('home'));
     }
 
-
-
     public function loadEntrys(){
 
         $entrys = EntryController:: all();
