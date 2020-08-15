@@ -49,6 +49,7 @@ Route::prefix('admin')->group (function()
         Route::post('/event-store','Eventcontroller@store')->name('routeEventStore');
         Route::post('/event-save','Entrycontroller@save')->name('routeEntrySave');
         Route::delete('/event-delete','Eventcontroller@destroy')->name('routeEventDelete');
+        Route::post('/event-send','Eventcontroller@send')->name('routeEventSend');
     });
   });
 });

@@ -79,6 +79,7 @@
                 <button type="button" class="btn btn-outline-danger deleteEvent">Delete</button>
                 <button type="button" class="btn btn-outline-success saveEvent">Save</button>
                 <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+
             </div>
 
         </div>
