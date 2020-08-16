@@ -86,6 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
             clearMessage('#message');
             resetForm("#formEvent");
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
 
             $("#modalCalendar").modal('show');
             $("#modalCalendar #titleModal").text('Reservierung');
