@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
             center: 'title',
             right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
         },
-        timezone: 'UTC',
         locale: 'de',
         navLinks: true,
         eventLimit:true,
@@ -127,8 +126,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         },
 
-
-
         eventResize: function (element) {
             let start = moment(element.event.start).format("YYYY-MM-DD HH-mm-ss");
             let end = moment(element.event.end).format("YYYY-MM-DD HH-mm-ss");
@@ -143,6 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
             sendEvent(routeEvents('routeEventUpdate'),newEvent);
 
         },
+
         select: function (element) {
 
             clearMessage('#message');

@@ -77,7 +77,11 @@ $(function () {
             email: email,
             phone : phone,
             description: description,
+
+
             };
+
+            console.log(Event);
 
         let route;
 
@@ -94,7 +98,8 @@ $(function () {
 
 function sendEvent(route,data_){
 
-    $.ajax(  {
+    $.ajax(
+        {
         url:route,
         data:data_,
         method:'POST',

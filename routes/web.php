@@ -96,5 +96,7 @@ Route::group(array('prefix' => 'api/v1'), function()
     Route::resource('users', 'UsersController');
 });
 
-
+Route::get('/email' , function(){
+    return new \App\Mail\ReservationConfirmation();
+});
 
