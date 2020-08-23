@@ -53,7 +53,7 @@
                     </form>
 
                     @can('is-admin')
-                        <a class  = "nav-item nav-link ;" href="reservation" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Adminbereich</a>
+                        <a class  = "nav-item nav-link ;" href="{{ route('admin.reservation.index') }}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Adminbereich</a>
                     @endcan
 
                     @auth()

@@ -19,6 +19,7 @@
     <link href='https://fonts.googleapis.com/css?famaly=Noto+Sans:400,700' rel='stylesheet' type='txt/css'>
      <!-- Styles -->
     <link href="{{ asset('css/headers.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/reservation.css')}}" rel="stylesheet">
 </head>
 <header>
     <div id="app">
