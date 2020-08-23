@@ -6,8 +6,14 @@ use App\entry;
 use App\Event;
 use App\Mail\ReservationConfirmation;
 use App\table;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\View\View;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -18,7 +24,7 @@ class AdminTablecontroller extends Controller
      * Display a listing of the resource.
      *
      * @param entry $entrys
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|Response|View
      */
     public function index(entry $entrys)
     {
@@ -42,8 +48,8 @@ class AdminTablecontroller extends Controller
     /**
      * Store a newly created resource in storage.
      *V
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param Request $request
+     * @return Application|RedirectResponse|Response|Redirector
      */
     public function store (Request $request)
     {
@@ -80,16 +86,12 @@ class AdminTablecontroller extends Controller
 
         $var = '+'.$LengthOfStay.'minutes';
 
-        $end = $bookingdate.' '.date('H:i:s',strtotime($var,strtotime($fromtime)));
-
-        return $end;
+        return $bookingdate.' '.date('H:i:s',strtotime($var,strtotime($fromtime)));
     }
 
     public function changefromTime ($bookingdate,$fromtime) {
 
-        $start = $bookingdate.date(' H:i:s',strtotime($fromtime));
-
-        return $start;
+        return $bookingdate.date(' H:i:s',strtotime($fromtime));
     }
 
     public function changeColor ($table_id) {
@@ -106,7 +108,7 @@ class AdminTablecontroller extends Controller
      * Display the specified resource.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return Response
      */
     public function show($id)
     {
@@ -117,7 +119,7 @@ class AdminTablecontroller extends Controller
      * Show the form for editing the specified resource.
      *
      * @param $entry
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @return Factory|View
      */
     public function edit($entry) {
 
@@ -130,9 +132,9 @@ class AdminTablecontroller extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
-     * @param $entry
-     * @return \Illuminate\Http\Response
+     * @param $entry_id
+     * @param $title
+     * @return void
      */
     public function tableupdate ($entry_id,$title)
     {
@@ -144,8 +146,8 @@ class AdminTablecontroller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param $entry
+     * @return Application|RedirectResponse|Response|Redirector
      */
     public function destroy($entry)
     {
@@ -155,6 +157,12 @@ class AdminTablecontroller extends Controller
 
         Alert::error('Der Datensatz wurde gelöscht');
         return redirect(route('admin.TableBook.index'));
+    }
+
+    public function send (Request $request) {
+
+        Mail::to($request->email)->send(New ReservationConfirmation);
+
     }
 
 }

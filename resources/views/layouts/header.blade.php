@@ -25,14 +25,14 @@
             <div class="pos-f-t">
                 <div class="collapse" id="navbarToggleExternalContent">
                     <div class="bg-dark p-4">
-                               <a class= "nav-item nav-link active" href= "/home" > Home <span class = "sr-only" > (current) </span></a>
-                               <a class  = "nav-item nav-link " href="{{route('admin.MenuEdit.index')}}" > Speisekarte </a>
-                               <a class  = "nav-item nav-link" href="{{route('admin.TableBook.index')}}" > Anfragen  </a>
-                               <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" > Tische </a>
-                               <a class  = "nav-item nav-link" href="{{route('admin.fullcalendar.index')}}" > Reservierungen </a>
-                               <a class  = "nav-item nav-link" href="{{route('admin.User.index')}}" > User</a>
+                        <a class= "nav-item nav-link active" href= "/home" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Home <span class = "sr-only" > (current) </span></a>
+                               <a class  = "nav-item nav-link " href="{{route('admin.MenuEdit.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Speisekarte </a>
+                               <a class  = "nav-item nav-link" href="{{route('admin.TableBook.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Anfragen  </a>
+                               <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Tische </a>
+                               <a class  = "nav-item nav-link" href="reservation" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod " > Reservierungen </a>
+                               <a class  = "nav-item nav-link" href="{{route('admin.User.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> User</a>
                                @auth()
-                                   <a class  = "nav-item nav-link" href="{{ route('logout') }}"
+                                   <a class  = "nav-item nav-link" href="{{ route('logout') }}"style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "
 
                                       onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">
@@ -44,8 +44,8 @@
                                    </form>
 
                                    @auth()
-                                       <div class="container mt-1" style="color:darkgray" >
-                                           <i class="fa fa-user  mt-1" style="color:darkgray"></i>
+                                       <div class="container mt-1" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod " >
+                                           <i class="fa fa-user  mt-1" style="color:palegoldenrod "></i>
                                            {{ Auth::user()->name }} ({{auth()->user()->role()->pluck('name')->implode(",")}})
                                        </div>
                                    @else

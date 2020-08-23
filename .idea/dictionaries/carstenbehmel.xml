@@ -9,6 +9,7 @@
       <w>behmel</w>
       <w>bookingdate</w>
       <w>buchungstag</w>
+      <w>changefrom</w>
       <w>datensatz</w>
       <w>datenschutz</w>
       <w>diesen</w>
@@ -20,6 +21,7 @@
       <w>fillable</w>
       <w>fromtime</w>
       <w>gast</w>
+      <w>gelöscht</w>
       <w>gstatic</w>
       <w>impressum</w>
       <w>löschen</w>
@@ -50,6 +52,7 @@
       <w>tischnummer</w>
       <w>toggler</w>
       <w>wollen</w>
+      <w>wurde</w>
       <w>ändern</w>
     </words>
   </dictionary>

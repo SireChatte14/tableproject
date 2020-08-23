@@ -81,7 +81,7 @@ Route::view('tablebook','tablebook');
 
 Route::post('submit','EntryController@save');
 
-Route::view('adminArea','adminArea');
+Route::view('reservation','reservation');
 
 Auth::routes();
 
