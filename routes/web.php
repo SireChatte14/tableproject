@@ -44,6 +44,7 @@ Route::prefix('admin')->group (function()
         Route::resource('TableEdit', 'tableSetUpController');
         Route::resource('fullcalendar', 'FullCalendarController');
         Route::resource('User', 'UserController');
+        Route::resource('reservation', 'AdminReservationController');
         Route::get('/load-events','Eventcontroller@loadEvents')->name('routeLoadEvents');
         Route::put('/event-update','Eventcontroller@update')->name('routeEventUpdate');
         Route::post('/event-store','Eventcontroller@store')->name('routeEventStore');
