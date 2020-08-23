@@ -41,7 +41,7 @@ class AdminTablecontroller extends Controller
 
            Alert::error('Der Datensatz wurde gelöscht');
 
-           return redirect(route('admin.fullcalendar.index'));
+           return redirect(route('admin.reservation.index'));
        }
     }
 
@@ -78,7 +78,7 @@ class AdminTablecontroller extends Controller
 
         $this->tableupdate($entry_id,$title);
 
-        return redirect(route('admin.fullcalendar.index'));
+        return redirect(route('admin.reservation.index'));
 
     }
 

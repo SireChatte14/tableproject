@@ -30,7 +30,7 @@
                                <a class  = "nav-item nav-link " href="{{route('admin.MenuEdit.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Speisekarte </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableBook.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Anfragen  </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Tische </a>
-                               <a class  = "nav-item nav-link" href="reservation" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod " > Reservierungen </a>
+                               <a class  = "nav-item nav-link" href="{{route('admin.reservation.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod " > Reservation </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.User.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> User</a>
                                @auth()
                                    <a class  = "nav-item nav-link" href="{{ route('logout') }}"style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "
