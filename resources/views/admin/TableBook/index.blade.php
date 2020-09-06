@@ -38,7 +38,7 @@
                                 <form action="{{route('confirmation.entry',$entry->id)}}" method="post">
                                     @csrf
                                         <div class="btn-group">
-                                            <a class="btn btn-outline-secondary" data-toggle="modal" data-target="#exampleModal_{{$entry->id}}"><i class="fas fa-1x fa-mail-bulk" ></i></a>
+                                            <a class="btn btn-outline-secondary" type="submit"><i class="fas fa-1x fa-mail-bulk" ></i></a>
                                             <a class="btn btn-outline-secondary" href="{{route('admin.TableBook.edit',$entry->id)}}"><i class="fas fa-1x fa-edit"></i></a>
                                             <a class="btn btn-outline-secondary" data-toggle="modal" data-target="#deleteModal_{{$entry->id}}"><i class="fas fa-1x fa-trash" ></i></a>
                                         </div>
@@ -88,50 +88,8 @@
                 </div>
             </div>
         </div>
-        <!-- Email-Modal -->
-        <div class="modal" id="exampleModal_{{$entry->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel_{{$entry->id}}">Reservierungsbestättigung</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true"></span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="recipient-name" class="col-form-label">An:</label>
-                                <input type="text" name="to" value=" {{$entry->email}} " class="form-control" >
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Reservierung vom :</label>
-                                <input type="text" value="{{$entry->created_at}}" class="form-control" id="recipient-name">
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Reservierung für den :</label>
-                                <input type="text" value="{{$entry->bookingdate}} von {{$entry->fromtime}} bis {{$entry->endTime}} " class="form-control" id="recipient-name">
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" class="col-form-label">Anzahl Personen :</label>
-                                <input type="text" value="{{$entry->NumberOfPeople}}" class="form-control" id="recipient-name">
-                            </div>
-                            <div class="form-group">
-                                <label for="message-text" name="tablenumber" class="col-form-label">Tischnummer :</label>
-                                <input type="text" value="{{$entry->tableName}}" class="form-control" id="recipient-name">
-                            </div>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <form action="send" method="post">
-                            @csrf
-                        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-outline-success">Send message</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
+
+
 @endsection
 
 

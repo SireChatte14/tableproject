@@ -6,15 +6,17 @@ use App\Event;
 use App\Http\Requests\EventRequest;
 use App\Mail\ReservationConfirmation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class EventController extends Controller
 {
-    public function loadEvents (){
+    public function index()
+    {
+        $events = DB::table('events')->get();
 
-        $events = Event:: all();
+        return view('admin.Event.index', ['events' => $events]);
 
-        return response()->json($events);
     }
 
     public function store(EventRequest $request){

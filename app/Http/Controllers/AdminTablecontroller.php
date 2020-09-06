@@ -41,7 +41,7 @@ class AdminTablecontroller extends Controller
 
            Alert::error('Der Datensatz wurde gelöscht');
 
-           return redirect(route('admin.reservation.index'));
+           return redirect(route('admin.Event.index'));
        }
     }
 
@@ -52,7 +52,9 @@ class AdminTablecontroller extends Controller
      * @return Application|RedirectResponse|Response|Redirector
      */
     public function store (Request $request)
+
     {
+
 
         $frometime = $request -> fromtime;
         $LengthOfStay = $request -> LengthOfStay;
@@ -78,7 +80,7 @@ class AdminTablecontroller extends Controller
 
         $this->tableupdate($entry_id,$title);
 
-        return redirect(route('admin.reservation.index'));
+        return redirect(route('admin.Event.index'));
 
     }
 
@@ -159,10 +161,7 @@ class AdminTablecontroller extends Controller
         return redirect(route('admin.TableBook.index'));
     }
 
-    public function send (Request $request) {
 
-        Mail::to($request->email)->send(New ReservationConfirmation);
 
-    }
 
 }

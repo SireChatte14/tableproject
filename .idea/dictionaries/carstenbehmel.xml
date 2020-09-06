@@ -16,12 +16,14 @@
       <w>diesen</w>
       <w>eingang</w>
       <w>ende</w>
+      <w>entrys</w>
       <w>eventdrop</w>
       <w>eventsend</w>
       <w>farbe</w>
       <w>fillable</w>
       <w>fromtime</w>
       <w>gast</w>
+      <w>gebucht</w>
       <w>gelöscht</w>
       <w>gstatic</w>
       <w>impressum</w>
@@ -46,6 +48,7 @@
       <w>tablenumber</w>
       <w>tableupdate</w>
       <w>tatsächlich</w>
+      <w>telefon</w>
       <w>telefonnummer</w>
       <w>tisch</w>
       <w>tischbestellung</w>

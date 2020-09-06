@@ -14,7 +14,7 @@
                         @csrf
                         <br>
                         <label> Sie möchten für </label>
-                        <input type  ="text" name="NumberOfPeople" placeholder="" style="width: 25px" required />
+                        <input type  ="text" name="NumberOfPeople" placeholder="" style="width: 35px" required />
                         <label> Personen reservieren ? </label><br>
                         <br>
 

@@ -19,7 +19,7 @@
     <link href='https://fonts.googleapis.com/css?famaly=Noto+Sans:400,700' rel='stylesheet' type='txt/css'>
      <!-- Styles -->
     <link href="{{ asset('css/headers.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/reservation.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/Event.css')}}" rel="stylesheet">
 </head>
 <header>
     <div id="app">
@@ -30,7 +30,7 @@
                                <a class  = "nav-item nav-link " href="{{route('admin.MenuEdit.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Speisekarte </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableBook.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Anfragen  </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Tische </a>
-                               <a class  = "nav-item nav-link" href="{{route('admin.reservation.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod " > Reservation </a>
+                               <a class  = "nav-item nav-link" href="{{route('admin.Event.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod " > Reservation </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.User.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> User</a>
                                @auth()
                                    <a class  = "nav-item nav-link" href="{{ route('logout') }}"style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "
