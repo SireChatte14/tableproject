@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Confirmations;
 use App\entry;
 use App\Events\confirmationEvent;
+use App\Mail\ReservationConfirmation;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class ConfirmationsController extends Controller
@@ -39,8 +41,22 @@ class ConfirmationsController extends Controller
 
                 Alert::success('Die Reservierung wurde bestätigt.');
 
+
+
                         return redirect()->back();
         }
+
+    }
+
+    public function send (Request $request) {
+
+        Mail::to($request->email)->send(New ReservationConfirmation(
+            [
+                "bookingdate" => $request->start,
+            ]
+        ));
+
+        return response()->json(true);
 
     }
 

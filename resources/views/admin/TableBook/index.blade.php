@@ -38,7 +38,7 @@
                                 <form action="{{route('confirmation.entry',$entry->id)}}" method="post">
                                     @csrf
                                         <div class="btn-group">
-                                            <a class="btn btn-outline-secondary" type="submit"><i class="fas fa-1x fa-mail-bulk" ></i></a>
+                                            <button type="submit" class="btn btn-outline-secondary" > Reservierung bestätigen </button>
                                             <a class="btn btn-outline-secondary" href="{{route('admin.TableBook.edit',$entry->id)}}"><i class="fas fa-1x fa-edit"></i></a>
                                             <a class="btn btn-outline-secondary" data-toggle="modal" data-target="#deleteModal_{{$entry->id}}"><i class="fas fa-1x fa-trash" ></i></a>
                                         </div>

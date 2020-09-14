@@ -3,24 +3,26 @@
 namespace App\Mail;
 
 
+use App\entry;
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class ConfirmUserMail extends Mailable
+class EmailDemo extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $data;
+   public $mailData;
+
     /**
      * Create a new message instance.
      *
-     * @param
+     * @param entry $mailData
      */
-    public function __construct($data)
+    public function __construct($mailData)
     {
-        $this->data = $data;
-
+        $this->mailData = $mailData;
     }
 
     /**
@@ -30,6 +32,7 @@ class ConfirmUserMail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.ConfirmUser')->with($this->data);
+        return $this->markdown('Email.demoEmail')
+            ->with('mailData', $this->mailData);
     }
 }
