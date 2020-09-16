@@ -97,6 +97,6 @@ Route::group(array('prefix' => 'api/v1'), function()
 });
 
 Route::get('/email' , function(){
-    return new \App\Mail\ReservationConfirmation();
+    return new \App\Mail\ConfirmUserMail();
 });
 

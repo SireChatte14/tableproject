@@ -25,8 +25,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/headers.css') }}" rel="stylesheet">
 
+    <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="139627d2-7b0f-4599-a2ad-a94cb525f9e2" data-blockingmode="auto" type="text/javascript"></script>
+    <script id="CookieDeclaration" src="https://consent.cookiebot.com/139627d2-7b0f-4599-a2ad-a94cb525f9e2/cd.js" type="text/javascript" async></script>
 </head>
 <header>
+
     <div class="pos-f-t">
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-dark p-4">

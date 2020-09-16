@@ -14,8 +14,11 @@ class CreateConfirmationsTable extends Migration
     public function up()
     {
         Schema::create('confirmations', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->morphs('confirmable');
             $table->timestamps();
+            $table->unique(['user_id','confirmable_type','confirmable_id']);
         });
     }
 
