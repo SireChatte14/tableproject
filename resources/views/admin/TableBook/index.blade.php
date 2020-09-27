@@ -23,7 +23,7 @@
                     </thead>
                     <tbody>
                             @foreach($entrys->all() AS $entry)
-                                <tr id="eid{{$entry->id}}">
+                                <tr id="{{$entry->id}}">
                                     <td>{{$entry->name}}</td>
                                     <td>{{$entry->bookingdate}}</td>
                                     <td>{{$entry->fromtime}}</td>
@@ -107,6 +107,10 @@
                                 <input type="text" class="form-control" id="name"/>
                             </div>
                             <div class="form-group">
+                                <label for="name">Personen</label>
+                                <input type="text" class="form-control" id="NumberOfPeople"/>
+                            </div>
+                            <div class="form-group">
                                 <label for="name">Buchungstag</label>
                                 <input type="text" class="form-control" id="bookingdate"/>
                             </div>
@@ -146,6 +150,7 @@
                 {
                     $("#id").val(entry.id);
                     $("#name").val(entry.name);
+                    $('#NumberOfPeople').val(entry.NumberOfPeople);
                     $("#bookingdate").val(entry.bookingdate);
                     $("#fromtime").val(entry.fromtime);
                     $("#tableName").val(entry.tableName);
