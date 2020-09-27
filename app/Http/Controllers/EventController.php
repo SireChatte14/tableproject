@@ -48,6 +48,8 @@ class EventController extends Controller
 
     public function send (Request $request) {
 
+        dd($request);
+
         Mail::to($request->email)->send(New ReservationConfirmation(
             [
                 "bookingdate" => $request->start,

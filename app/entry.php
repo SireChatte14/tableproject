@@ -11,7 +11,14 @@ class entry extends Model
     protected $table='entrys';
     use SoftDeletes;
     protected $dates = ['deleted_at'];
-    protected $fillable =['NumberOfPeople','bookingdate','fromtime','LengthOfStay','endTime','sms','name','phone','message'];
+    protected $fillable =['NumberOfPeople','bookingdate','fromtime','LengthOfStay','endTime','email','name','phone','message'];
+    /**
+     * @var mixed
+     */
+
+    /**
+     * @var mixed
+     */
 
 
     public function getStartAttribute($value)

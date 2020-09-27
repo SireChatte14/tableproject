@@ -11,6 +11,7 @@
 |
 */
 
+use App\Http\Controllers\AdminTablecontroller;
 use App\Mail\WelcomeUser;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -96,7 +97,6 @@ Route::group(array('prefix' => 'api/v1'), function()
     Route::resource('users', 'UsersController');
 });
 
-Route::get('/email' , function(){
-    return new \App\Mail\ConfirmUserMail();
-});
+Route::post('EventSend/{id}', 'MailController@send')->name('EventSend');
 
+Route::get('/entry/{id}',[AdminTablecontroller::class,'getEntryByID']);

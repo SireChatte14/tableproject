@@ -42,22 +42,11 @@ class ConfirmationsController extends Controller
                 Alert::success('Die Reservierung wurde bestätigt.');
 
 
-
                         return redirect()->back();
         }
 
     }
 
-    public function send (Request $request) {
 
-        Mail::to($request->email)->send(New ReservationConfirmation(
-            [
-                "bookingdate" => $request->start,
-            ]
-        ));
-
-        return response()->json(true);
-
-    }
 
 }

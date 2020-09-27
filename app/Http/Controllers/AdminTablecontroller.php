@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\entry;
 use App\Event;
+use App\Mail\Email;
 use App\Mail\ReservationConfirmation;
 use App\table;
 use Illuminate\Contracts\Foundation\Application;
@@ -161,6 +162,13 @@ class AdminTablecontroller extends Controller
         return redirect(route('admin.TableBook.index'));
     }
 
+    public function getEntryByID($id)
+    {
+
+        $entry = Entry::find($id);
+
+        return response()->json($entry);
+    }
 
 
 
