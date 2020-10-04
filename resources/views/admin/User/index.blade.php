@@ -13,7 +13,6 @@
                             <th> Email </th>
                             <th> Telefon</th>
                             <th> Angemeldet seit</th>
-                            <th> Rolle </th>
                          </tr>
                          <tr>
                             @foreach($users->all() AS $user)
