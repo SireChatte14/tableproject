@@ -46,18 +46,4 @@ class EventController extends Controller
         return response()->json(true);
     }
 
-    public function send (Request $request) {
-
-        dd($request);
-
-        Mail::to($request->email)->send(New ReservationConfirmation(
-            [
-                "bookingdate" => $request->start,
-            ]
-        ));
-
-        return response()->json(true);
-
-    }
-
 }

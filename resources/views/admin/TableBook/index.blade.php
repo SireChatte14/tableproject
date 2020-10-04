@@ -1,8 +1,10 @@
 @extends('layouts.header')
 
 @section('content')
+
+    @include('sweetalert::alert')
         <div class="card-header ">
-            Reservierungsanfragen    @include('sweetalert::alert')
+            Reservierungsanfragen
         </div>
         <div class="card-body">
                 <table id="tableBook" class="table">
@@ -38,7 +40,7 @@
                                         <form>
                                             <div class="btn-group">
                                                 <a class="btn btn-outline-info" href="javascript:void(0)" onclick="emailConfirm({{$entry->id}})"><i class="fas fa-1x fa-envelope"></i></a>
-                                                <a class="btn btn-outline-secondary" href=""><i class="fas fa-1x fa-check"></i></a>
+                                                <a class="btn btn-outline-secondary" href="{{route('admin.TableBook.edit',$entry->id)}}"><i class="fas fa-1x fa-check"></i></a>
                                                 <a class="btn btn-outline-secondary" data-toggle="modal" data-target="#deleteModal_{{$entry->id}}"><i class="fas fa-1x fa-trash" ></i></a>
                                             </div>
                                         </form>
@@ -99,7 +101,7 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form id="emailform">
+                        <form id="emailConfirm">
                             @csrf
                             <input type="hidden" id="id" name="id"/>
                             <div class="form-group">
@@ -130,9 +132,7 @@
 
                     </div>
                     <div class="modal-footer">
-                        <form action="{{route('EventSend',$entry->id)}}" method="post">
-                            @csrf
-
+                        <form>
                             <div class="btn-group">
                                 <button type="submit" class="btn btn-outline-success"  > send </button>
                             </div>
@@ -159,7 +159,34 @@
                 })
             }
 
+                $("#emailConfirm").submit(function(e){
+                    e.preventDefault();
+                    let NumberOfPeople = $('#NumberOfPeople').val();
+                    let bookingdate = $('#bookingdate').val();
+                    let fromtime = $('#fromtime').val();
+                    let tableName = $('#tableName').val();
+                    let email = $('#email').val();
+                    $("input[name=_token]").val();
 
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    $.ajax({
+                        url:"{{route('EventSend')}}",
+                        type:"POST",
+                        data:{
+                            email:email,
+                            NumberOfPeople:NumberOfPeople,
+                            bookingdate:bookingdate,
+                            fromtime:fromtime,
+                            tableName:tableName,
+                            _token: this._token,
+                        },
+                    });
+                });
         </script>
 
 @endsection

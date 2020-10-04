@@ -97,6 +97,6 @@ Route::group(array('prefix' => 'api/v1'), function()
     Route::resource('users', 'UsersController');
 });
 
-Route::post('EventSend/{id}', 'MailController@send')->name('EventSend');
+Route::post('EventSend', 'MailController@send')->name('EventSend');
 
 Route::get('/entry/{id}',[AdminTablecontroller::class,'getEntryByID']);

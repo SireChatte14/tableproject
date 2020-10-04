@@ -32,6 +32,7 @@
                                <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Tische </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.Event.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod " > Reservation </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.User.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> User</a>
+                               <a class  = "nav-item nav-link" href="{{route('admin.fullcalendar.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Calendar</a>
                                @auth()
                                    <a class  = "nav-item nav-link" href="{{ route('logout') }}"style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "
 

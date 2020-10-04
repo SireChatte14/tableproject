@@ -55,8 +55,6 @@ class AdminTablecontroller extends Controller
     public function store (Request $request)
 
     {
-
-
         $frometime = $request -> fromtime;
         $LengthOfStay = $request -> LengthOfStay;
         $bookingdate = $request -> bookingdate;
@@ -70,7 +68,6 @@ class AdminTablecontroller extends Controller
         $event -> start                 = $this -> changefromTime($bookingdate,$frometime);
         $event -> NumberOfPeople        = $request -> NumberOfPeople;
         $event -> end                   = $this -> changeTime($bookingdate,$frometime,$LengthOfStay);
-        $event -> color                 = $this ->changeColor($table_id);
         $event -> email                 = $request -> email;
         $event -> phone                 = $request -> phone;
         $event -> description           = $request -> message;
@@ -95,15 +92,6 @@ class AdminTablecontroller extends Controller
     public function changefromTime ($bookingdate,$fromtime) {
 
         return $bookingdate.date(' H:i:s',strtotime($fromtime));
-    }
-
-    public function changeColor ($table_id) {
-
-        $data = table:: where('tableNumber',$table_id)->first();
-
-        $color = $data->color;
-
-        return $color;
     }
 
 
