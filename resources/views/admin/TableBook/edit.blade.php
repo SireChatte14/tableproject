@@ -7,10 +7,10 @@
             <h1> Reservierung bearbeiten </h1>
         </div>
     </div>
-    <div class                   ="container-fluid">
+    <div class                   ="container-fluid" style="padding-top: 20px ">
         <div class                 ="row justify-content-md-center ">
           @include('sweetalert::alert')
-            <form action="{{route('admin.TableBook.store')}}" method="POST">
+            <form>
                 @csrf
                 <div class="form-group">
 
@@ -65,7 +65,7 @@
                     <label for="message"  > Nachricht </label>
                     <textarea type="text" row="5" name="message" value="{{ $entry->message}}" class="form-control col-md-auto @if ($errors->has('message')) is-invalid @endif " id="message'"></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Reservierung bestätigen</button>
+                <a class="btn btn-outline-secondary" href="{{route('confirmation.entry',$entry->id)}}"><i class="fas fa-1x fa-check"></i></a>
             </form>
         </div>
     </div>

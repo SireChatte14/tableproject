@@ -61,7 +61,7 @@ Route::group(["prefix"=> "confirmation","middleware"=>"auth"],function(){
 
     Route::name('confirmation.')->group(function(){
 
-    Route::post('entry/{entry}', 'ConfirmationsController@entry')->name('entry');
+    Route::get('entry/{entry}', 'ConfirmationsController@entry')->name('entry');
 });
 });
 

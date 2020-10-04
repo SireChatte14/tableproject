@@ -35,14 +35,7 @@ class SendConfirmationNotification
 
     {
 
-        Mail::to($event->entry->user->email)->send(new ConfirmUserMail(
-            [
 
-                "bookingdate" => $event->entry->related()->bookingdate,
-                "fromtime"=> $event->entry->related()->fromtime,
-                "tableName"=> $event->entry->related()->tableName,
-
-        ]));
     }
 
 }

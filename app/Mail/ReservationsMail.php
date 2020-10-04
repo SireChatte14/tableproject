@@ -6,6 +6,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ReservationsMail extends Mailable
 {
@@ -30,6 +31,9 @@ class ReservationsMail extends Mailable
      */
     public function build()
     {
+
+
         return $this->markdown('emails.ReservationMail');
+
     }
 }
