@@ -16,7 +16,7 @@
                             <th> Ende </th>
                             <th> Email </th>
                             <th> Telefonnummer</th>
-                            <th> Personenanzahl </th>
+                            <th> Personen </th>
                             <th> Tisch </th>
                             <th> Nachricht</th>
                             <th> Eingang </th>
