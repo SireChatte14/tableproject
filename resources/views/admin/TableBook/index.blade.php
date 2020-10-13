@@ -40,7 +40,7 @@
                                         <form>
                                             <div class="btn-group">
                                                 <a class="btn btn-outline-info" href="javascript:void(0)" onclick="emailConfirm({{$entry->id}})"><i class="fas fa-1x fa-envelope"></i></a>
-                                                <a class="btn btn-outline-secondary" href="{{route('admin.TableBook.edit',$entry->id)}}"><i class="fas fa-1x fa-check"></i></a>
+                                                <a class="btn btn-outline-secondary" href="{{route('admin.TableBook.edit',$entry->id)}}"><i class="fas fa-1x fa-utensils"></i></a>
                                                 <a class="btn btn-outline-secondary" data-toggle="modal" data-target="#deleteModal_{{$entry->id}}"><i class="fas fa-1x fa-trash" ></i></a>
                                             </div>
                                         </form>
