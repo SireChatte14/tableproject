@@ -40,6 +40,7 @@ Route::prefix('admin')->group (function()
         return view('admin');
       });
 
+        Route::resource('Opening', 'OpeningHoursController');
         Route::resource('TableBook', 'AdminTablecontroller');
         Route::resource('MenuEdit', 'AdminMenucontroller');
         Route::resource('TableEdit', 'tableSetUpController');

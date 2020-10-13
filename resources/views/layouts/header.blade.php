@@ -27,6 +27,7 @@
                 <div class="collapse" id="navbarToggleExternalContent">
                     <div class="bg-dark p-4">
                         <a class= "nav-item nav-link active" href= "/home" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Home <span class = "sr-only" > (current) </span></a>
+                               <a class  = "nav-item nav-link " href="{{route('admin.Opening.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Opening Hours </a>
                                <a class  = "nav-item nav-link " href="{{route('admin.MenuEdit.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Speisekarte </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableBook.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Anfragen  </a>
                                <a class  = "nav-item nav-link" href="{{route('admin.TableEdit.index')}}" style="font-size: 20px;font-family:SansSerif, cursive;color: palegoldenrod "> Tische </a>
